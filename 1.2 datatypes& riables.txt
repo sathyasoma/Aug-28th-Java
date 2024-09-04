@@ -1,0 +1,196 @@
+
+DAY-4:
+====================================================================================================
+DATATYPES IN JAVA:
+```
+DATATYPE
+```
+it is representing the type of the data which we want to 
+store.
+
+we have to specifiy suitable datatype while we are storing 
+the data into variables.
+
+ basically in java, we have two types of datatypes
+ 
+ 
+   1.primitive datatypes(built in datatypes)	
+   2.non-prmitive datatypes/reference datatypes
+   
+primitive datatypes:
+`````
+
+  pre-defined datatypes/built-in datatypes/system defined
+  datatypes.
+  
+  these datatypes are given by sunmicrosystem.
+  
+  they were divided these primitive datatypes into 4 categories.
+  
+  
+  integer category (to store numeric values)
+  
+          -byte
+	  -short
+	  -int
+	  -long
+	  
+  
+  float category(to store decimal values)
+  
+      -float
+	  -double
+  
+       
+  character category(To stroe single characters information)
+  
+      -char
+  
+  
+  boolean category (to store logical values either true or false)
+  
+      -boolean
+	  
+total we have 8 prmitive datatypes categorized into 4 types.
+
+	  
+	  byte
+	  short
+	  int
+	  long
+	  float
+	  double
+	  char
+	  boolean
+	  
+syntax:
+
+  <datatypename> <variablename> = <data/value>;
+
+  
+
+invalid:
+`` 
+   name ='s';
+   age=90
+   mobileno=7676767678;
+   
+valid:
+``
+  char name= 's';
+  int age = 90;
+  char mobileno=7676776678;//invalid
+  
+ note: while we are storing the data into variables, it is higy recommended to
+ give correct datatypes otherwise java compiler will give you compile time
+ errors.
+ 
+variable:
+`
+variable is the name/memory location where our data gets stored.
+
+syntax:
+
+   <datatype> <variablename> = <data>;
+
+eg:
+
+    int age = 90;
+
+  int --> datatype
+  age --> variablename
+  90  --> actual data
+
+rules to declare variable:
+====================
+1. we are not allowed to declare variables names as any java reserved keyword.
+
+       int int =90; //invalid
+	   
+2. variable names should not start with any numeric digit
+
+       int 2age = 90; //invalid
+
+3.variable names should always starts with alphabets.
+
+       int age=90;//valid
+       int age2=90;//valid(it allows alphanumeric)
+
+4.variable names are not allowed any special characters except(_ and $)
+
+       int age*=90;//invalid
+	   int age_shree=90;//valid
+	   int age$shree=90;//valid
+	   
+	   
+5.variable name length should not exceed 64 characters.
+
+	   int aasldfalkjsldflkasfjklasfl=90;
+   
+   90(numeric value)
+   
+     byte,short,int,long
+	 
+   byte/short/int/long age=90;
+
+
+choosing the datatype is based on the range of the value which we are storing.
+
+  byte b = 90;(1 byte of memory)
+  
+  short b=129;//invalid 
+
+every datatype is maintaining it's memory size and range.
+
+byte --> 1 byte --> 8 bits
+
+
+formula to calculate range of any datatype:
+
+
+   -2 ^n-1 to (2 ^ n-1) -1
+
+  ==> n(No.of bits which is occuping by the datatype)
+  
+  -2 ^ 7 to 2 ^7 -1
+  
+  -128 to 127
+  
+  
+  
+
+datatype    memorysizes   range
+ byte         1 byte    -128 to 127
+ short        2 bytes   .....
+ int          4 bytes
+ long         8 bytes
+ float        4 bytes
+ double       8 bytes
+ boolean      1 bit
+ char         2 bytes
+ 
+ 
+example:
+````
+class DataTypeDemo
+{
+   public static void main(String[] args)
+   {
+	   
+     //variables declaration
+      short age=130;
+	  char status='a';
+	  boolean isActive=true;
+	  double marks$ = 90.5;
+	  double marks_=90.5;
+	  
+	 //displaying variables  
+	  System.out.println(age);
+	  System.out.println(status);
+	  System.out.println(isActive);
+	  System.out.println(marks$);
+ 
+   }
+
+}
+

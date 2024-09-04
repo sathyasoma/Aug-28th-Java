@@ -1,0 +1,211 @@
+day-10:
+=====================================================================
+==============================================================
+instance(non-static) vs static
+
+
+object: instance of a class.
+
+
+instance: allocating sufficient amount of memory space for all the class 
+properties.
+
+
+int a;//non-static variable
+static int a;//static variable
+
+note: java is case-sensitive programming language
+
+
+"static" is a java reserved keyword, for the purpose of declaring static variables and defining static methods.
+
+//non-static method
+public void m1()
+{
+}
+ 
+//static method
+public static void m1()
+{
+} 
+  
+  
+ in java, we have two areas are there basically
+ 
+ 
+  1.instance area
+  2.static areas
+  
+  
+ instance area is one, which belongs to any instance or non-static method
+
+ ex:
+ 
+   //non-static method
+	public void m1()
+	{
+	//instance area
+	}
+  
+ static area is one, which belongs to any static method.
+ 
+ ex:
+   //static method
+	public static void m1()
+	{
+	  //static area
+	}
+
+ ex:
+ 
+    public static void main(String[] args)
+	{
+	// static area
+	}
+
+
+instance properties(varaibles, methods,constructors , blocks)
+
+static properties(variable,methods,blocks)
+
+
+note:
+``
+whenever we define the class, memory spaces will not be created for class properties.
+
+note:
+``
+whenever we create the object for a class, memory spaces will be created for 
+non-static or instance properties of the class by the jvm so that data gets stored.
+
+note:
+``
+for static properties memory will be created at the time of loading the class into main memory.
+
+jvm --> classloadersubsystem
+
+
+note:
+``
+we can access non-static or instance properties from static area
+w.r.to object only.
+
+we can access non-static properties from instance area directly.
+
+example:
+``
+
+public class Test1 {
+	
+	//instance properties or non static
+	
+	int a;
+	String b;
+	
+	
+	
+	public Test1()
+	{
+		//assign the values to my non-static variables
+		a=100;
+		b="ram";
+	}
+	
+	
+	//instance method
+	public void display()
+	{
+		//instance area
+		System.out.println(a);
+		System.out.println(b);
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		//static area
+		
+		//object creation
+		
+		Test1 obj = new Test1();
+		
+		System.out.println(obj.a);
+		System.out.println(obj.b);
+		
+		
+		//call the instance method from static area
+		
+		System.out.println("===============");
+		
+		obj.display();
+	
+	}
+
+}
+
+
+note:
+```
+if the properties are of static type, we can access w.r.to
+class name either from non-static area or static area 
+
+
+note:
+``
+it is highly recommended to access the static properties w.r.to
+class name from any area either static or non-staic.
+
+
+
+public class Test1 {
+	
+	//static properties
+	
+	static int a=100;
+	static String b="ram";
+
+	//instance method
+	public void display()
+	{
+		//instance area
+		System.out.println(Test1.a);
+		System.out.println(Test1.b);
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		//static area
+		
+		System.out.println(Test1.a);
+		System.out.println(Test1.b);
+		
+		
+		
+		
+	}
+	
+	
+	
+
+}
+
+
+
+
+
+
+why static?
+`````
+for static properties memory will be created only one time 
+
+for nonstatic properties memory will be created evertime whenever we
+create the object.
+
+1000
+  class college
+  {
+    int stid;
+	String stname;
+	static String collegename="xyz";
+  }
