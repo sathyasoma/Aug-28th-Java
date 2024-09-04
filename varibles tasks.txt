@@ -1,0 +1,31 @@
+
+
+Exercise 1: Calculate the area of a circle.
+Write a Java program that calculates the area of a
+ circle using the formula area = π * radius * radius. 
+ Define the radius as a double variable and assume π is 3.14159.
+
+Exercise 2: Calculate the sum of two integers.
+Write a Java program that calculates the sum of two integers. 
+Declare two integer variables and assign values to them.
+
+Exercise 3: Calculate the average of three floating-point numbers.
+Write a Java program that calculates the average of three floating-point numbers 
+(e.g., 2.5, 3.0, 4.5). Declare three double variables and calculate their average.
+
+Exercise 4: Concatenate two strings.
+Write a Java program that concatenates two strings and displays the result. 
+Declare two String variables and assign values to them.
+
+Exercise 5: Calculate the area of a rectangle.
+Write a Java program that calculates the area of a rectangle using the formula area = length * width. 
+Declare two double variables for length and width, and calculate the area.
+
+Exercise 6: Calculate the total cost.
+Write a Java program that calculates the total cost of an item based on its price and quantity. 
+Declare a double variable for the price and an int variable for the quantity, then calculate and display the total cost.
+
+Exercise 7: Perform arithmetic operations.
+Write a Java program that performs various arithmetic operations
+ (addition, subtraction, multiplication, division) on two numbers. 
+ Declare two int variables and perform these operations.
