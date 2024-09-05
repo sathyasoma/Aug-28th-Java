@@ -1,0 +1,146 @@
+DAY-5:
+=========================================================================
+Method(s):
+`
+  c language --> function
+  
+  java language --> method
+  
+ 
+->method is the location where we are writing the logic to perform some operations based on the requirement.
+
+syntax:
+``
+
+   [accessmodifier] <returntype>  <methodname>([parameters if any])//head
+   {
+     //logic//body 
+   }
+   
+ eg:
+ 
+   public static void main(String[] args)//method heading
+   {
+      //logic//method body
+   }
+
+eg:
+define one method with name as disply which displays "HelloJava"
+
+             void display()
+			 {
+			    System.out.println("HelloJava");
+			 }
+
+eg:
+
+define one method which retuns person's age?
+
+             int getAge()
+			 {
+			    return 90;
+			 }
+
+note:
+``
+return value and return type must be compatible(same)
+
+
+eg:
+
+define one method which returns name of the employee?
+
+         String getEmployeeName()
+		 {
+		    return "Shree";
+		 }
+
+eg:
+
+define one method which retuns salary of the employee?
+
+          double getEmployeeSalary()
+		  {
+		     return 6789.00;
+		  }
+
+eg:
+
+define one method which retuns grade of the student?
+
+
+    char getStudentGrade()
+	{
+	  return 'A';
+	}
+	
+eg:
+
+define one method which retuns whether student is active or not?
+
+ true
+ false
+ 
+
+boolean isStudentActive()
+{
+   return true;
+}
+
+
+eg:
+
+define one method which takes two integer values and 
+returns their sum?
+
+   int getSum(int x, int y)
+   {
+      return x+y;
+   }
+
+eg:
+
+define one method which takes their firstname and lastname
+and gives their full name?
+
+
+
+note:
+`
+while we are defining methods, we are not allowed to gives
+spaces in between.
+
+eg:
+
+String getFullName(String firstname,String lastname)
+{
+  return firstname+lastname;
+}
+
+
+eg:
+
+define one method which takes student name and student id
+and displays their information?
+
+
+void getStudentDetails(String studentname,int studentid)
+{
+ System.out.println(studentname);
+ System.out.println(studentid);
+}
+
+
+eg:
+`
+define one method which takes employee salary and displays
+their annual salary?
+
+
+void getEmployeeAnnualSalary(double employeesalary)
+{
+ System.out.println(employeesalary*12);
+}
+
+
+
