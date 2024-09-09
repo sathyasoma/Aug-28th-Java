@@ -1,0 +1,225 @@
+while loop:
+``
+it is used to iterate a part of the program several times.
+
+if the number of iteration is not fixed, it is recommended
+to use while loop.
+
+
+syntax:
+``
+              while(condition)
+			  {
+			  //code to be executed.
+			  }
+ 
+write a java program for displaying 1 to 10 numbers using
+while loop?
+
+example:
+``````
+
+public class Test8 {
+	
+	
+	public static void main(String[] args) {
+		
+		
+		int i=1;
+		while(i<=10)
+		{
+
+		System.out.println(i);
+		i++;
+
+		}
+		
+		
+	}
+
+}
+
+
+write a java program for displaying 1000 to 500 in reverse order?
+
+
+public class Test8 {
+	
+	
+	public static void main(String[] args) {
+		
+		
+		int i=1000;
+
+
+		while(i>=500)
+		{
+
+		System.out.println(i);
+		i--;
+
+		
+		}
+		
+		
+	}
+
+}
+->write a java program for displaying even numbers
+  using while loop?
+  
+  2
+  4
+  6
+  8
+  10
+  
+ example:
+``
+
+public class Test8 {
+
+	public static void main(String[] args) {
+
+		int i=0;
+
+		while(i<=10)
+
+		{
+			
+		System.out.println(i);
+		i=i+2;
+
+		}
+	}
+
+}
+
+->write a java program to define infinite while loop?
+
+
+
+//defninig infinite while loop
+public class Test8 {
+
+	public static void main(String[] args) {
+
+		while(true)
+		{
+			System.out.println("infinite while loop");
+		}
+	}
+
+}
+
+
+example:
+```
+
+//defninig infinite while loop
+public class Test8 {
+
+	public static void main(String[] args) {
+
+		 int i=100;
+		while(i>1)
+		{
+			System.out.println("infinite while loop");
+			i++;
+		}
+	}
+
+}
+
+
+assignment:
+``
+write a java program for achieving infinite loop using
+for loop?
+
+do-while loop:
+````
+it is used to iterate a part of the program several times.
+
+
+if the number of iteration is not fixed and you must
+have to execute the loop at least once, it is recommended
+to use do-while loop.
+
+icici --> at last it asks for pin number(do-while)
+
+sbi --> initially it asks for pin number(while)
+
+java do-while loop is execute at least once because 
+condition is checked after loop body.
+
+
+syntax:
+``
+             do{
+			 
+			    //code to be executed
+			 }
+			 while(condition);
+
+
+write a java program for displaying 1 to 10 numbers
+using do-while loop?
+
+
+//defninig infinite while loop
+public class Test8 {
+
+	public static void main(String[] args) {
+
+		// do-while loop
+		int i = 1;
+		do {
+			System.out.println(i);
+			i++;
+
+		} while (i<=10);
+	}
+
+}
+
+
+->
+write a java program for displaying 20 to 10 numbers
+in reverse order using do-while loop?
+
+
+
+//defninig infinite while loop
+public class Test8 {
+
+	public static void main(String[] args) {
+
+		int i=20;
+
+		do{
+		 System.out.println(i);
+		  i--;
+		 }
+		 while (i>=10);
+	}
+
+}
+
+
+->write a java program for infinite loop using do-while?            
+
+
+//defninig infinite while loop
+public class Test8 {
+
+	public static void main(String[] args) {
+
+		
+		do
+		{
+		 System.out.println("Infinite do while loop");
+		 }
+		 while (true);
+		}
+	}

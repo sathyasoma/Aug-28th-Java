@@ -1,0 +1,160 @@
+
+ Loops in java(loop statements):
+ ````
+ In programming languages, loops are used to execute
+ a set of instructions repeatedly when some conditions
+ become true.
+ 
+ 
+ there are 3 types of loops in java.
+ 
+   1.for loop
+   2.while loop
+   3.do-while loop
+
+
+for loop:
+```
+it is used to iterate a part of the program several times.
+
+if the number of iteration is fixed, it is recommended
+to use for loop.
+
+syntax:
+``
+for(intialization;conditionchecking;incremnt/decrement)
+{
+ //code to be executed
+}
+
+eg:
+
+
+
+
+public class Test7 {
+	
+	public static void main(String[] args) {
+		
+		//for loop
+		for(int i=1;i<=10;i++)
+		{
+		System.out.println(i);
+		}
+		
+	}
+
+}
+
+
+write a program to display 100 to 200 numbers using
+for loop?
+
+
+
+public class Test7 {
+	
+	public static void main(String[] args) {
+		
+		//for loop
+
+		for(int i=100; i<=200;i++)
+		{
+
+		     System.out.println(i);
+
+		}
+		
+		
+		
+	}
+
+}
+
+
+write a java program for displaying first 10 numbers
+in reverse order using for loop?
+
+ex:
+
+
+public class Test7 {
+	
+	public static void main(String[] args) {
+		
+		//for loop
+
+		  for(int i=10; i>=1;i--)
+		  {
+
+		  System.out.println(i);
+
+		  }
+		
+		
+		
+	}
+
+}
+
+
+
+
+
+write a java program for displaying  even numbers
+using for loop?
+
+expected output:
+````
+2
+4
+6
+8
+10
+
+program:
+```
+
+public class Test7 {
+	
+	public static void main(String[] args) {
+		
+		//for loop
+
+		for(int i=2; i<=10;i=i+2)
+		{
+
+		System.out.println(i);
+
+		}
+
+		
+		
+		
+	}
+
+}
+
+assignment:
+``````
+write a java program for displaying  odd numbers
+using for loop?
+
+
+public class Test7 {
+	
+	public static void main(String[] args) {
+		
+		//for loop
+
+		for(int i=1; i<=10;i=i+2)
+		{
+
+		System.out.println(i);
+
+		}
+	
+		
+	}
+
+}

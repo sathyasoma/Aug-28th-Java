@@ -1,0 +1,252 @@
+	DAY-11:
+=======================================================================
+======================================================================	
+ control statements in java:
+ ``````
+ we can control the flow of execution.
+ 
+ 
+ using these control statements, which part of the code
+ will be executed, when it will be executed , how many no.of 
+ times we can make it execute
+ 
+ 
+ java provides three types of control statements
+ 
+   1.decision making statements
+   2.loop statements
+   3.jump statements
+   
+   
+ 1.decision making statements:
+ ``````
+ 
+ decision making statements evaluate the boolean expression
+ and contrl the program flow depending upon the condition
+ result.
+ 
+   there are two types of decision making staements in java.
+   
+             1.if statement
+			 2.switch statement
+			 
+if statement
+`
+in java , if statement is used to evaluate a condition.
+
+the control of the program is diverted depending upon the
+condition result that is a boolean value, either true or false.
+
+
+in java, there are four types of if-staements 
+
+  
+          1.if statement
+		  2.if else statement
+		  3.else-if statement
+		  4.nested if statement
+		  
+		  
+1.if statement:
+````
+it evaluates a boolean expression and enables the program 
+to enter a block of code if the expresson evaluates to true.
+
+syntax:
+`
+   if(<condition>)
+   {
+     //block of code 
+   }
+   
+example:
+```
+
+public class Test2 {
+	
+	public static void main(String[] args) {
+		
+		
+	  int x=100;
+	  int y=200;
+	  
+	  if(x+y>200)
+	  {
+		  System.out.println("x+y is greater than 200");
+	  }
+	}
+
+}
+
+
+if-else statement:
+````
+if-else satement is an extension to the if-statement
+which uses another block of code. i.e else block.
+
+
+The else block is executed if the condition of the if-block
+is evaluated as false.
+
+
+syntax:
+``
+syntax:
+`
+   if(<condition>)
+   {
+     //block of code 
+   }
+   else(<condition>)
+   {
+     //block of code
+   }
+   
+
+example:
+```
+
+public class Test2 {
+	
+	public static void main(String[] args) {
+		
+		
+	  int x=100;
+	  int y=200;
+	  
+	  if(x+y<200)
+	  {
+		  System.out.println("x+y is less than 200");
+	  }
+	  
+	  else
+	  {
+		  
+		  System.out.println("x+y is greater than 200");
+	  }
+	  
+	}
+
+}
+
+// one if statement
+
+
+3.else-if statement:
+`````
+1 -if statemnt
+multiple -else-if statements
+1-else statement
+
+example:
+`
+
+public class Test3 {
+	
+	public static void main(String[] args) {
+		
+		
+		
+		String city="Delhi";
+		
+		if(city=="Meerut")
+		{
+			System.out.println("city is meerut");
+		}
+		
+		else if(city=="Noida")
+		{
+			System.out.println("city is noida");
+		}
+		
+		else if(city=="Agra")
+		{
+			System.out.println("city is agra");
+		}
+		
+		else
+		{
+			System.out.println(city);
+		}
+			
+		
+		
+	}
+
+}
+
+
+assignment:
+``
+check whether number is positive,negative or zero by
+using if-else-if?
+
+
+-----------------------------
+public class test1 {
+
+ public static void main(String[] args) {
+     
+  int a=100;
+ if(a>0)
+  
+ {
+  
+  System.out.println("number is postive");
+ }
+ 
+ else if(a<0)
+ {
+    
+   System.out.println("number is -ve");
+  }  
+  
+  else{
+  
+  System.out.println("number is zero");
+  }
+ }}
+
+
+nested-if statement:
+````
+it is always legal to nest if-else staements which means
+we can use one of or else if statements inside another if
+or else if statements.
+
+syntax:
+   if(booleanexpression1)
+   {
+     //executes when the boolean expression1 is true
+	 if(booleanexpression2)
+	 {
+	  //executes when the boolean expression2 is true
+	  }
+   }
+   
+example:
+```
+
+public class Test4 {
+	
+	public static void main(String[] args) {
+		
+		
+		int x=30;
+		int y=10;
+		
+		if(x==30)
+		{
+			
+			if(y==10)
+			{
+				System.out.println("x=30 and y=10");
+			}
+		}
+	}
+
+}
+
+
+
+

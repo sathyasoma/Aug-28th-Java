@@ -1,0 +1,96 @@
+
+
+
+jump statements:
+````
+when a break statement is encounted inside a loop, the loop is 
+immediatly terminated and the program control resumes at the next 
+statement following the loop.
+
+  the java break statement is used to break loop or switch staement.
+  
+  it breaks the current flow of the program at specified condition 
+  
+  for loop
+  while loop
+  do-while loop
+
+
+break statement in for loop:
+````
+
+//defninig infinite while loop
+public class Test8 {
+
+	public static void main(String[] args) {
+
+		
+		for(int i=1;i<=10;i++)
+		{
+			if(i==5)
+			{
+				
+				break;
+			}
+			System.out.println(i);
+			
+		}
+	}
+}
+
+
+
+
+assignment:
+``
+use break statement in both while loop and as well
+as do-while loop?
+
+
+
+continue statement:
+``
+continue statement is used in loop control structure
+when you need to jump to the next iteration of the loop
+immediatly.
+
+it can be used with for loop or while loop or do-while.
+
+it is used to continue the loop, it continues the current
+flow of the program and skips the remaining code at
+the specified condition.
+
+
+syntax:
+
+   jump-statement;
+   continue;
+   
+   
+example:
+```
+
+//defninig infinite while loop
+public class Test8 {
+
+	public static void main(String[] args) {
+
+		
+		for(int i=1;i<=10;i++)
+		{
+			if(i==5)
+			{
+				
+				continue;
+			}
+			System.out.println(i);
+			
+		}
+	}
+}
+
+
+assignment:
+``
+write a java program for apply the continue statement
+in both while and do-while loop(s)?
