@@ -1,0 +1,93 @@
+1. What is flow control in Java?
+
+Answer: Flow control refers to the sequence in which statements are executed in a Java program. It allows you to control the order of execution based on conditions, loops, and branching statements.
+2. What are the three main categories of flow control in Java?
+
+Answer: The three main categories of flow control in Java are:
+Selection (Conditional) Statements: Used to make decisions and execute different code blocks based on conditions (e.g., if, else, switch).
+Iteration (Loop) Statements: Used to execute a block of code repeatedly (e.g., for, while, do-while).
+Branching (Jump) Statements: Used to control the flow of execution by transferring control to another part of the program (e.g., break, continue, return).
+3. What is the purpose of the if statement in Java, and how does it work?
+
+Answer: The if statement is used for conditional execution in Java. It allows you to specify a condition, and if that condition is true, a block of code associated with the if statement is executed. If the condition is false, the code block is skipped.
+4. What is the difference between if, else if, and else in Java?
+
+Answer:
+if: It is used to specify the primary condition. If it is true, the associated block of code is executed.
+else if: It is used to specify additional conditions to be checked if the preceding if condition is false. Only one else if block is executed if its condition is true.
+else: It is used to specify a block of code to execute if none of the preceding conditions (including if and else if) is true.
+5. What is the purpose of the switch statement in Java?
+
+Answer: The switch statement is used for multi-way conditional branching. It allows you to select one of many code blocks to execute based on the value of an expression. Each case label in a switch statement corresponds to a specific value or range of values.
+6. What is an infinite loop, and how can you create one in Java?
+
+Answer: An infinite loop is a loop that continues to execute indefinitely. You can create an infinite loop in Java by omitting the condition or by using a condition that always evaluates to true. For example:
+
+while (true) {
+    // Infinite loop
+}
+7. Explain the difference between for and while loops in Java.
+
+Answer:
+for loops: These loops are typically used when you know the number of iterations in advance. They have a loop control variable and include initialization, condition, and iteration expression in a single line.
+while loops: These loops are used when the number of iterations is not known in advance. They only include a condition, and the loop continues as long as the condition is true.
+8. What is the purpose of the break and continue statements in Java?
+
+Answer:
+break: The break statement is used to exit a loop prematurely. It can be used in switch and loop constructs to terminate the loop or switch statement.
+continue: The continue statement is used to skip the current iteration of a loop and move to the next iteration. It is often used to skip specific iterations based on a condition.
+9. How do you prevent a NullPointerException in Java when working with conditional statements and objects?
+
+Answer: To prevent a NullPointerException, you should check if an object reference is null before attempting to access its methods or properties using conditional statements (e.g., if (object != null)).
+10. What is the purpose of the return statement in Java?
+
+
+- **Answer:** The `return` statement is used to exit a method and optionally re
+
+11. What is the purpose of the default case in a switch statement?
+
+
+- **Answer:** The `default` case in a `switch` statement is executed when none of the other case values match the value of the expression being tested. It is often used as a fallback or default action when no specific case is met.
+12. Explain the difference between the while loop and the do-while loop in Java.
+
+- **Answer:** 
+  - `while` loop: In a `while` loop, the condition is checked before the loop body is executed. If the condition is initially false, the loop body may not execute at all.
+  - `do-while` loop: In a `do-while` loop, the loop body is executed at least once, and the condition is checked after the loop body. This guarantees that the loop body runs at least once before checking the condition.
+13. What is the purpose of the break statement with a label in Java?
+
+
+- **Answer:** The `break` statement with a label allows you to exit from a nested loop or switch statement by specifying the label of the outer loop or switch you want to break out of. It provides a way to control which loop or switch is terminated when there are nested structures.
+14. What is the difference between the && (logical AND) and || (logical OR) operators in Java?
+
+
+- **Answer:** 
+  - `&&` (logical AND): This operator returns `true` if both operands are `true`, and it returns `false` if at least one operand is `false`.
+  - `||` (logical OR): This operator returns `true` if at least one of the operands is `true`, and it returns `false` if both operands are `false`.
+15. Explain the purpose of the continue statement in a loop.
+
+
+- **Answer:** The `continue` statement is used to skip the current iteration of a loop and continue with the next iteration. It is often used when you want to bypass a specific iteration based on a condition without exiting the loop.
+16. What is the difference between the == operator and the .equals() method when comparing objects in Java?
+
+
+- **Answer:** 
+  - `==` operator: This operator compares object references and checks if they point to the same memory location. It is used to test reference equality.
+  - `.equals()` method: The `.equals()` method is used to compare the contents or values of objects. It is typically overridden in custom classes to define what "equality" means for objects of that class.
+17. How can you exit a loop prematurely in Java without using the break statement?
+
+
+- **Answer:** You can use a `return` statement within a loop to exit the loop and, if applicable, the method containing the loop. This approach allows you to terminate the loop and return a value from the method at the same time.
+18. Explain the purpose of the switch statement's fall-through behavior.
+
+
+- **Answer:** Fall-through behavior in a `switch` statement occurs when multiple case labels share the same code block. When a case is matched, the code block for that case is executed, and execution continues to subsequent cases unless a `break` statement is encountered. Fall-through can be intentionally used to execute multiple cases together.
+19. How can you ensure that an infinite loop doesn't consume all CPU resources?
+
+
+- **Answer:** To prevent an infinite loop from consuming all CPU resources, you can include a delay or sleep statement within the loop or use conditional statements to exit the loop based on specific conditions.
+20. When should you use a for loop, and when should you use a while loop in Java?
+
+
+- **Answer:** 
+  - Use a `for` loop when you know the number of iterations in advance and can define the loop control variable, initialization, condition, and iteration expression in a single line.
+  - Use a `while` loop when the number of iterations is not known in advance and 
