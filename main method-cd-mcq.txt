@@ -1,0 +1,73 @@
+1. Which of the following signatures is correct for the main method in Java?
+a) public void main(String[] args)
+b) public static void main(String[] args)
+c) private static void main(String[] args)
+d) protected static void main(String[] args)
+
+2. What will happen if the main method is declared as private?
+a) The program will compile but will not run.
+b) The program will compile and run without any issues.
+c) The program will not compile.
+d) The program will compile, but a runtime exception will occur.
+
+3. What will be the output if the main method is missing from a Java program?
+a) The program will compile and run without any issues.
+b) The program will compile but not run, resulting in a runtime error.
+c) The program will not compile.
+d) The program will run, but nothing will be printed.
+
+4. Can the main method in Java be overloaded?
+a) Yes, but only if the return type is void.
+b) Yes, with different parameters.
+c) No, the main method cannot be overloaded.
+d) Yes, but only within the same class.
+
+5. Which of the following is true regarding the main method in Java?
+a) The main method can return an int value.
+b) The main method can accept int arguments.
+c) The main method can be overloaded.
+d) The main method can be non-static.
+
+6. What will happen if you run a Java program with the following main method signature?
+
+public static void main()
+a) The program will compile and run without issues.
+b) The program will compile but will not run.
+c) The program will not compile.
+d) The program will compile, but a runtime exception will occur.
+
+7. Can the main method in Java be final?
+a) Yes
+b) No
+c) Only if it is not static
+d) Only if it does not return void
+
+8. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+a) Compilation Error
+b) No output
+c) Hello, World!
+d) hello, world!
+
+9. What will be the result of running the following code if the main method is not declared static?
+
+public class Main {
+    public void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+a) The program will compile and run without issues.
+b) The program will not compile.
+c) The program will compile but not run.
+d) The program will compile and run but produce no output.
+
+10. What will happen if the main method is declared with a return type other than void?
+a) The program will compile and run without issues.
+b) The program will compile but not run.
+c) The program will not compile.
+d) The program will run but produce no output.

@@ -1,0 +1,134 @@
+1. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 20;
+        int c = a + b;
+        System.out.println(c);
+    }
+}
+a) 10
+b) 20
+c) 30
+d) Compilation Error
+
+2. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 5;
+        int y = 10;
+        x = y + 2;
+        System.out.println(x);
+    }
+}
+a) 5
+b) 7
+c) 10
+d) 12
+
+3. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 100;
+        int y = x++;
+        System.out.println(x + " " + y);
+    }
+}
+a) 100 100
+b) 101 100
+c) 100 101
+d) 101 101
+
+4. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 5;
+        int result = --a * b++;
+        System.out.println(result);
+    }
+}
+a) 50
+b) 45
+c) 40
+d) 55
+
+5. Which of the following is a valid variable declaration in Java?
+a) int _varName;
+b) int 123var;
+c) int var#Name;
+d) int var-Name;
+
+6. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 20;
+        int b = 10;
+        int result = a++ + ++b;
+        System.out.println(result);
+    }
+}
+a) 30
+b) 31
+c) 32
+d) 21
+
+7. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 15;
+        a += 5;
+        System.out.println(a);
+    }
+}
+a) 5
+b) 10
+c) 15
+d) 20
+
+8. Which of the following is true about variables in Java?
+a) A variable name can start with a number.
+b) A variable can be declared with any special character in its name.
+c) A variable name can contain letters, digits, underscores, and dollar signs.
+d) A variable name can be a reserved keyword.
+Explanation: Variable names in Java can contain letters, digits, underscores (_), and dollar signs ($). They cannot start with a digit, contain special characters, or be a reserved keyword.
+
+9. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 5;
+        int b = 10;
+        int temp = a;
+        a = b;
+        b = temp;
+        System.out.println(a + " " + b);
+    }
+}
+a) 5 10
+b) 10 5
+c) 10 10
+d) 5 5
+
+10. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 0;
+        x += 5;
+        x *= 2;
+        x -= 3;
+        x /= 2;
+        System.out.println(x);
+    }
+}
+a) 0
+b) 2
+c) 3
+d) 5

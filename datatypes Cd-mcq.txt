@@ -1,0 +1,112 @@
+
+
+1. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        byte b = 127;
+        b++;
+        System.out.println(b);
+    }
+}
+a) 127
+b) -127
+c) -128
+d) 128
+
+2. Which of the following data types is used to create a variable that should store text in Java?
+a) String
+b) char
+c) text
+d) varchar
+
+3. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        double d = 100/30;
+        System.out.println(d);
+    }
+}
+a) 3.3333333333333335
+b) 3.0
+c) 3.333333333333333
+d) Compilation Error
+
+4. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 10;
+        double y = x / 3.0;
+        System.out.println(y);
+    }
+}
+a) 3
+b) 3.3333333333333335
+c) 3.0
+d) 3.33
+
+5. What is the range of the short datatype in Java?
+a) -32,768 to 32,767
+b) -128 to 127
+c) 0 to 65,535
+d) -2^31 to 2^31-1
+
+6. Which of the following datatypes has the highest precision in Java?
+a) float
+b) double
+c) int
+d) long
+
+7. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        boolean flag = true;
+        if(flag = false) {
+            System.out.println("False");
+        } else {
+            System.out.println("True");
+        }
+    }
+}
+a) True
+b) False
+c) Compilation Error
+d) Runtime Error
+
+8. Which datatype is used to store a number with a decimal point in Java?
+a) int
+b) long
+c) float
+d) byte
+
+9. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 97;
+        char ch = (char) x;
+        System.out.println(ch);
+    }
+}
+a) A
+b) a
+c) Compilation Error
+d) Runtime Error
+
+10. What is the result of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int i = 3;
+        float f = 1.5f;
+        double result = i * f;
+        System.out.println(result);
+    }
+}
+a) 4
+b) 4.5
+c) 4.500000
+d) Compilation Error

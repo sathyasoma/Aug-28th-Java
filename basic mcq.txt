@@ -1,0 +1,768 @@
+
+
+1. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        byte b = 127;
+        b++;
+        System.out.println(b);
+    }
+}
+a) 127
+b) -127
+c) -128
+d) 128
+
+2. Which of the following data types is used to create a variable that should store text in Java?
+a) String
+b) char
+c) text
+d) varchar
+
+3. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        double d = 100/30;
+        System.out.println(d);
+    }
+}
+a) 3.3333333333333335
+b) 3.0
+c) 3.333333333333333
+d) Compilation Error
+
+4. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 10;
+        double y = x / 3.0;
+        System.out.println(y);
+    }
+}
+a) 3
+b) 3.3333333333333335
+c) 3.0
+d) 3.33
+
+5. What is the range of the short datatype in Java?
+a) -32,768 to 32,767
+b) -128 to 127
+c) 0 to 65,535
+d) -2^31 to 2^31-1
+
+6. Which of the following datatypes has the highest precision in Java?
+a) float
+b) double
+c) int
+d) long
+
+7. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        boolean flag = true;
+        if(flag = false) {
+            System.out.println("False");
+        } else {
+            System.out.println("True");
+        }
+    }
+}
+a) True
+b) False
+c) Compilation Error
+d) Runtime Error
+
+8. Which datatype is used to store a number with a decimal point in Java?
+a) int
+b) long
+c) float
+d) byte
+
+9. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 97;
+        char ch = (char) x;
+        System.out.println(ch);
+    }
+}
+a) A
+b) a
+c) Compilation Error
+d) Runtime Error
+
+10. What is the result of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int i = 3;
+        float f = 1.5f;
+        double result = i * f;
+        System.out.println(result);
+    }
+}
+a) 4
+b) 4.5
+c) 4.500000
+d) Compilation Error
+
+
+
+
+1. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 20;
+        int c = a + b;
+        System.out.println(c);
+    }
+}
+a) 10
+b) 20
+c) 30
+d) Compilation Error
+
+2. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 5;
+        int y = 10;
+        x = y + 2;
+        System.out.println(x);
+    }
+}
+a) 5
+b) 7
+c) 10
+d) 12
+
+3. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 100;
+        int y = x++;
+        System.out.println(x + " " + y);
+    }
+}
+a) 100 100
+b) 101 100
+c) 100 101
+d) 101 101
+
+4. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 5;
+        int result = --a * b++;
+        System.out.println(result);
+    }
+}
+a) 50
+b) 45
+c) 40
+d) 55
+
+5. Which of the following is a valid variable declaration in Java?
+a) int _varName;
+b) int 123var;
+c) int var#Name;
+d) int var-Name;
+
+6. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 20;
+        int b = 10;
+        int result = a++ + ++b;
+        System.out.println(result);
+    }
+}
+a) 30
+b) 31
+c) 32
+d) 21
+
+7. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 15;
+        a += 5;
+        System.out.println(a);
+    }
+}
+a) 5
+b) 10
+c) 15
+d) 20
+
+8. Which of the following is true about variables in Java?
+a) A variable name can start with a number.
+b) A variable can be declared with any special character in its name.
+c) A variable name can contain letters, digits, underscores, and dollar signs.
+d) A variable name can be a reserved keyword.
+Explanation: Variable names in Java can contain letters, digits, underscores (_), and dollar signs ($). They cannot start with a digit, contain special characters, or be a reserved keyword.
+
+9. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 5;
+        int b = 10;
+        int temp = a;
+        a = b;
+        b = temp;
+        System.out.println(a + " " + b);
+    }
+}
+a) 5 10
+b) 10 5
+c) 10 10
+d) 5 5
+
+10. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 0;
+        x += 5;
+        x *= 2;
+        x -= 3;
+        x /= 2;
+        System.out.println(x);
+    }
+}
+a) 0
+b) 2
+c) 3
+d) 5
+
+
+
+
+1. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 10, b = 20;
+        if (a > b) {
+            System.out.println("a is greater");
+        } else {
+            System.out.println("b is greater");
+        }
+    }
+}
+a) a is greater
+b) b is greater
+c) a is greater b is greater
+d) Compilation Error
+
+2. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        int num = 15;
+        if (num % 2 == 0) {
+            System.out.println("Even");
+        } else {
+            System.out.println("Odd");
+        }
+    }
+}
+a) Even
+b) Odd
+c) 15
+d) Compilation Error
+
+3. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 5;
+        if (x > 0) {
+            if (x < 10) {
+                System.out.println("x is between 0 and 10");
+            }
+        } else {
+            System.out.println("x is less than or equal to 0");
+        }
+    }
+}
+a) x is between 0 and 10
+b) x is less than or equal to 0
+c) Compilation Error
+d) No output
+
+4. Which of the following will correctly execute a block of code if the variable x is greater than y?
+a) if (x > y)
+b) if x > y
+c) if (x > y) then
+d) if (x > y) {
+
+5. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 5, b = 6;
+        if (a == b) {
+            System.out.println("Equal");
+        } else if (a > b) {
+            System.out.println("a is greater");
+        } else {
+            System.out.println("b is greater");
+        }
+    }
+}
+a) Equal
+b) a is greater
+c) b is greater
+d) Compilation Error
+
+6. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        int number = 5;
+        String result = (number % 2 == 0) ? "Even" : "Odd";
+        System.out.println(result);
+    }
+}
+a) Even
+b) Odd
+c) 5
+d) Compilation Error
+
+7. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 10;
+        if (x == 10) 
+            System.out.println("x is 10");
+        System.out.println("x is not 10");
+    }
+}
+a) x is 10
+b) x is not 10
+c) x is 10 and x is not 10
+d) Compilation Error
+
+8. Which of the following statements is true regarding the switch statement?
+a) The switch statement can evaluate a boolean expression.
+b) The switch statement can only evaluate int expressions.
+c) The switch statement can evaluate char, byte, short, int, String, and enum types.
+d) The switch statement cannot use a default case.
+
+9. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int day = 3;
+        switch (day) {
+            case 1: 
+                System.out.println("Monday");
+                break;
+            case 2: 
+                System.out.println("Tuesday");
+                break;
+            case 3: 
+                System.out.println("Wednesday");
+                break;
+            case 4: 
+                System.out.println("Thursday");
+                break;
+            case 5: 
+                System.out.println("Friday");
+                break;
+            default: 
+                System.out.println("Weekend");
+        }
+    }
+}
+a) Monday
+b) Tuesday
+c) Wednesday
+d) Weekend
+
+10. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        int score = 70;
+        if (score >= 90) {
+            System.out.println("Grade A");
+        } else if (score >= 80) {
+            System.out.println("Grade B");
+        } else if (score >= 70) {
+            System.out.println("Grade C");
+        } else {
+            System.out.println("Fail");
+        }
+    }
+}
+a) Grade A
+b) Grade B
+c) Grade C
+d) Fail
+
+
+
+
+1. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(i);
+        }
+    }
+}
+a) 0 1 2 3 4
+b) 1 2 3 4 5
+c) 0 1 2 3 4 5
+d) Compilation Error
+
+2. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        int i = 0;
+        while (i < 3) {
+            System.out.println(i);
+            i++;
+        }
+    }
+}
+a) 0 1 2
+b) 0 1 2 3
+c) 1 2 3
+d) Compilation Error
+
+3. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int i = 1;
+        do {
+            System.out.println(i);
+            i++;
+        } while (i <= 3);
+    }
+}
+a) 1 2 3
+b) 1 2 3 4
+c) 0 1 2 3
+d) Compilation Error
+
+4. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i += 2) {
+            System.out.println(i);
+        }
+    }
+}
+a) 0 2 4
+b) 0 1 2 3 4
+c) 0 2 4 6
+d) Compilation Error
+
+5. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i++) {
+            if (i == 3) {
+                break;
+            }
+            System.out.println(i);
+        }
+    }
+}
+a) 0 1 2
+b) 0 1 2 3
+c) 0 1 2 3 4
+d) Compilation Error
+
+6. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        int i = 0;
+        while (i < 5) {
+            if (i == 2) {
+                i++;
+                continue;
+            }
+            System.out.println(i);
+            i++;
+        }
+    }
+}
+a) 0 1 2 3 4
+b) 0 1 3 4
+c) 0 1 2 3
+d) 1 2 3 4
+
+
+7. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 3; i++) {
+            for (int j = 1; j <= 3; j++) {
+                System.out.println(i + " " + j);
+            }
+        }
+    }
+}
+a) 1 1, 2 2, 3 3
+b) 1 1, 1 2, 1 3, 2 1, 2 2, 2 3, 3 1, 3 2, 3 3
+c) 1 1, 2 1, 3 1, 1 2, 2 2, 3 2, 1 3, 2 3, 3 3
+d) Compilation Error
+
+8. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 5; i++) {
+            if (i % 2 == 0) {
+                System.out.println(i + " is even");
+            } else {
+                System.out.println(i + " is odd");
+            }
+        }
+    }
+}
+a) 1 is odd, 2 is even, 3 is odd, 4 is even, 5 is odd
+b) 1 is even, 2 is odd, 3 is even, 4 is odd, 5 is even
+c) 2 is even, 4 is even
+d) Compilation Error
+Explanation: The for loop iterates through numbers from 1 to 5 and checks whether each number is even or odd, printing the appropriate message.
+
+9. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int i = 5;
+        while (i > 0) {
+            System.out.println(i);
+            i--;
+        }
+    }
+}
+a) 5 4 3 2 1
+b) 5 4 3 2 1 0
+c) 4 3 2 1
+d) Compilation Error
+
+10. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        int i = 0;
+        do {
+            System.out.println(i);
+            i++;
+        } while (i < 3);
+    }
+}
+a) 0 1 2
+b) 0 1 2 3
+c) 1 2 3
+d) Compilation Error
+
+
+
+
+1. Which of the following signatures is correct for the main method in Java?
+a) public void main(String[] args)
+b) public static void main(String[] args)
+c) private static void main(String[] args)
+d) protected static void main(String[] args)
+
+2. What will happen if the main method is declared as private?
+a) The program will compile but will not run.
+b) The program will compile and run without any issues.
+c) The program will not compile.
+d) The program will compile, but a runtime exception will occur.
+
+3. What will be the output if the main method is missing from a Java program?
+a) The program will compile and run without any issues.
+b) The program will compile but not run, resulting in a runtime error.
+c) The program will not compile.
+d) The program will run, but nothing will be printed.
+
+4. Can the main method in Java be overloaded?
+a) Yes, but only if the return type is void.
+b) Yes, with different parameters.
+c) No, the main method cannot be overloaded.
+d) Yes, but only within the same class.
+
+5. Which of the following is true regarding the main method in Java?
+a) The main method can return an int value.
+b) The main method can accept int arguments.
+c) The main method can be overloaded.
+d) The main method can be non-static.
+
+6. What will happen if you run a Java program with the following main method signature?
+
+public static void main()
+a) The program will compile and run without issues.
+b) The program will compile but will not run.
+c) The program will not compile.
+d) The program will compile, but a runtime exception will occur.
+
+7. Can the main method in Java be final?
+a) Yes
+b) No
+c) Only if it is not static
+d) Only if it does not return void
+
+8. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+a) Compilation Error
+b) No output
+c) Hello, World!
+d) hello, world!
+
+9. What will be the result of running the following code if the main method is not declared static?
+
+public class Main {
+    public void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+a) The program will compile and run without issues.
+b) The program will not compile.
+c) The program will compile but not run.
+d) The program will compile and run but produce no output.
+
+10. What will happen if the main method is declared with a return type other than void?
+a) The program will compile and run without issues.
+b) The program will compile but not run.
+c) The program will not compile.
+d) The program will run but produce no output.
+
+
+1. What is a constructor in Java?
+a) A method that is used to initialize an object.
+b) A method that is used to destroy an object.
+c) A method that can return a value.
+d) A method that performs arithmetic operations.
+
+
+2. What is the return type of a constructor?
+a) void
+b) The class type
+c) int
+d) No return type
+
+3. Which of the following is true about constructors?
+a) Constructors must have the same name as the class.
+b) Constructors can have a different name than the class.
+c) Constructors can return a value.
+d) Constructors can be static.
+
+4. How many constructors can a class have?
+a) Only one
+b) Two
+c) As many as needed
+d) None
+
+5. What will be the output of the following code?
+
+public class Main {
+    int x;
+
+    public Main() {
+        x = 5;
+    }
+
+    public static void main(String[] args) {
+        Main obj = new Main();
+        System.out.println(obj.x);
+    }
+}
+a) 0
+b) 5
+c) Compilation error
+d) Runtime error
+
+6. What happens if a class does not have any constructors defined?
+a) The class will not compile.
+b) The class cannot be instantiated.
+c) The class will have a default constructor.
+d) The class will inherit a constructor from the parent class.
+
+7. Which of the following is a valid constructor declaration in Java?
+a) public void MyClass() {}
+b) public MyClass() {}
+c) public MyClass(void) {}
+d) void MyClass() {}
+
+8. What will be the output of the following code?
+public class Main {
+    int x;
+
+    public Main(int y) {
+        x = y;
+    }
+
+    public static void main(String[] args) {
+        Main obj = new Main(10);
+        System.out.println(obj.x);
+    }
+}
+a) 0
+b) 10
+c) Compilation error
+d) Runtime error
+
+9. Can a constructor be private in Java?
+a) Yes, but only if the class is final.
+b) No, constructors cannot be private.
+c) Yes, a constructor can be private.
+d) Yes, but only in abstract classes.
+
+10. What will be the output of the following code?
+
+public class Main {
+    int x;
+
+    public Main() {
+        x = 5;
+    }
+
+    public Main(int y) {
+        x = y;
+    }
+
+    public static void main(String[] args) {
+        Main obj = new Main(10);
+        System.out.println(obj.x);
+    }
+}
+a) 5
+b) 10
+c) Compilation error
+d) Runtime error
+

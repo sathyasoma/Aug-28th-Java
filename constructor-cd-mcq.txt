@@ -1,0 +1,102 @@
+1. What is a constructor in Java?
+a) A method that is used to initialize an object.
+b) A method that is used to destroy an object.
+c) A method that can return a value.
+d) A method that performs arithmetic operations.
+
+
+2. What is the return type of a constructor?
+a) void
+b) The class type
+c) int
+d) No return type
+
+3. Which of the following is true about constructors?
+a) Constructors must have the same name as the class.
+b) Constructors can have a different name than the class.
+c) Constructors can return a value.
+d) Constructors can be static.
+
+4. How many constructors can a class have?
+a) Only one
+b) Two
+c) As many as needed
+d) None
+
+5. What will be the output of the following code?
+
+public class Main {
+    int x;
+
+    public Main() {
+        x = 5;
+    }
+
+    public static void main(String[] args) {
+        Main obj = new Main();
+        System.out.println(obj.x);
+    }
+}
+a) 0
+b) 5
+c) Compilation error
+d) Runtime error
+
+6. What happens if a class does not have any constructors defined?
+a) The class will not compile.
+b) The class cannot be instantiated.
+c) The class will have a default constructor.
+d) The class will inherit a constructor from the parent class.
+
+7. Which of the following is a valid constructor declaration in Java?
+a) public void MyClass() {}
+b) public MyClass() {}
+c) public MyClass(void) {}
+d) void MyClass() {}
+
+8. What will be the output of the following code?
+public class Main {
+    int x;
+
+    public Main(int y) {
+        x = y;
+    }
+
+    public static void main(String[] args) {
+        Main obj = new Main(10);
+        System.out.println(obj.x);
+    }
+}
+a) 0
+b) 10
+c) Compilation error
+d) Runtime error
+
+9. Can a constructor be private in Java?
+a) Yes, but only if the class is final.
+b) No, constructors cannot be private.
+c) Yes, a constructor can be private.
+d) Yes, but only in abstract classes.
+
+10. What will be the output of the following code?
+
+public class Main {
+    int x;
+
+    public Main() {
+        x = 5;
+    }
+
+    public Main(int y) {
+        x = y;
+    }
+
+    public static void main(String[] args) {
+        Main obj = new Main(10);
+        System.out.println(obj.x);
+    }
+}
+a) 5
+b) 10
+c) Compilation error
+d) Runtime error

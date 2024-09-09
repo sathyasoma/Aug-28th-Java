@@ -1,0 +1,164 @@
+1. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 10, b = 20;
+        if (a > b) {
+            System.out.println("a is greater");
+        } else {
+            System.out.println("b is greater");
+        }
+    }
+}
+a) a is greater
+b) b is greater
+c) a is greater b is greater
+d) Compilation Error
+
+2. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        int num = 15;
+        if (num % 2 == 0) {
+            System.out.println("Even");
+        } else {
+            System.out.println("Odd");
+        }
+    }
+}
+a) Even
+b) Odd
+c) 15
+d) Compilation Error
+
+3. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 5;
+        if (x > 0) {
+            if (x < 10) {
+                System.out.println("x is between 0 and 10");
+            }
+        } else {
+            System.out.println("x is less than or equal to 0");
+        }
+    }
+}
+a) x is between 0 and 10
+b) x is less than or equal to 0
+c) Compilation Error
+d) No output
+
+4. Which of the following will correctly execute a block of code if the variable x is greater than y?
+a) if (x > y)
+b) if x > y
+c) if (x > y) then
+d) if (x > y) {
+
+5. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 5, b = 6;
+        if (a == b) {
+            System.out.println("Equal");
+        } else if (a > b) {
+            System.out.println("a is greater");
+        } else {
+            System.out.println("b is greater");
+        }
+    }
+}
+a) Equal
+b) a is greater
+c) b is greater
+d) Compilation Error
+
+6. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        int number = 5;
+        String result = (number % 2 == 0) ? "Even" : "Odd";
+        System.out.println(result);
+    }
+}
+a) Even
+b) Odd
+c) 5
+d) Compilation Error
+
+7. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int x = 10;
+        if (x == 10) 
+            System.out.println("x is 10");
+        System.out.println("x is not 10");
+    }
+}
+a) x is 10
+b) x is not 10
+c) x is 10 and x is not 10
+d) Compilation Error
+
+8. Which of the following statements is true regarding the switch statement?
+a) The switch statement can evaluate a boolean expression.
+b) The switch statement can only evaluate int expressions.
+c) The switch statement can evaluate char, byte, short, int, String, and enum types.
+d) The switch statement cannot use a default case.
+
+9. What will be the output of the following code?
+
+public class Main {
+    public static void main(String[] args) {
+        int day = 3;
+        switch (day) {
+            case 1: 
+                System.out.println("Monday");
+                break;
+            case 2: 
+                System.out.println("Tuesday");
+                break;
+            case 3: 
+                System.out.println("Wednesday");
+                break;
+            case 4: 
+                System.out.println("Thursday");
+                break;
+            case 5: 
+                System.out.println("Friday");
+                break;
+            default: 
+                System.out.println("Weekend");
+        }
+    }
+}
+a) Monday
+b) Tuesday
+c) Wednesday
+d) Weekend
+
+10. What will be the output of the following code snippet?
+
+public class Main {
+    public static void main(String[] args) {
+        int score = 70;
+        if (score >= 90) {
+            System.out.println("Grade A");
+        } else if (score >= 80) {
+            System.out.println("Grade B");
+        } else if (score >= 70) {
+            System.out.println("Grade C");
+        } else {
+            System.out.println("Fail");
+        }
+    }
+}
+a) Grade A
+b) Grade B
+c) Grade C
+d) Fail
