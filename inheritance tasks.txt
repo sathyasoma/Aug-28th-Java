@@ -1,0 +1,69 @@
+Exercise 1: Banking System
+Create a basic banking system with three classes: Account, SavingsAccount, and CheckingAccount.
+
+Account Class:
+
+Properties: accountNumber, balance
+Methods: deposit(double amount), withdraw(double amount), and a constructor to set the account number and initial balance.
+SavingsAccount Class (subclass of Account):
+
+Additional Property: interestRate
+Method: addInterest(), which adds interest to the account balance based on the interest rate.
+CheckingAccount Class (subclass of Account):
+
+Additional Property: overdraftLimit
+Method: withdraw(double amount), which allows withdrawing funds up to the overdraft limit.
+Write a Main class to demonstrate the use of these classes by creating instances of both SavingsAccount and CheckingAccount.
+
+Exercise 2: Shape Hierarchy
+Create a class hierarchy representing different geometric shapes: Shape, Circle, and Rectangle.
+
+Shape Class:
+
+Methods: getArea() and getPerimeter() (to be overridden by subclasses).
+Circle Class (subclass of Shape):
+
+Properties: radius
+Implement getArea() and getPerimeter() methods for circles.
+Rectangle Class (subclass of Shape):
+
+Properties: length and width
+Implement getArea() and getPerimeter() methods for rectangles.
+Write a Main class to demonstrate the use of these classes by creating instances of both Circle and Rectangle.
+
+
+Exercise:3  Employee Management System
+Create a Java class hierarchy for an employee management system with three classes: Employee, Manager, and Developer.
+
+Employee Class:
+
+Properties: name, employeeId, salary
+Method: displayDetails(), which prints the employee's name, ID, and salary.
+Manager Class (subclass of Employee):
+
+Additional Property: department
+Method: manageTeam(), which prints "Managing the team."
+Developer Class (subclass of Employee):
+
+Additional Property: programmingLanguage
+Method: writeCode(), which prints "Writing code in Java."
+Write a Main class to demonstrate the use of these classes by creating instances of both Manager and Developer, setting their properties, and calling their methods.
+
+
+
+Exercise:4  Book Hierarchy
+Create a Java class hierarchy for different types of books: Book, FictionBook, and NonFictionBook.
+
+Book Class:
+
+Properties: title, author, year
+Method: displayInfo(), which prints the book's title, author, and year of publication.
+FictionBook Class (subclass of Book):
+
+Additional Property: genre
+Method: read(), which prints "Enjoy reading this fiction book."
+NonFictionBook Class (subclass of Book):
+
+Additional Property: topic
+Method: study(), which prints "Use this non-fiction book for studying."
+Write a Main class to demonstrate the use of these classes by creating instances of both FictionBook and NonFictionBook, setting their properties, and calling their methods.

@@ -1,0 +1,36 @@
+Exercise 1: Find the Maximum Value in an Array
+
+Write a Java program to find the maximum value in an array of integers.
+Exercise 2: Calculate the Average of Array Elements
+
+Write a Java program to calculate the average of elements in an array of integers.
+Exercise 3: Reverse an Array
+
+Write a Java program to reverse an array of integers in place (without creating a new array).
+Exercise 4: Check if an Element Exists in an Array
+
+Write a Java program to check if a specific element exists in an array of integers.
+Exercise 5: Find the Sum of All Positive Elements
+
+Write a Java program to find the sum of all positive elements in an array of integers.
+Exercise 6: Merge Two Arrays
+
+Write a Java program to merge two arrays of integers into a single array.
+Exercise 7: Count Occurrences of an Element
+
+Write a Java program to count the occurrences of a specific element in an array of integers.
+Exercise 8: Find the Smallest Element
+
+Write a Java program to find the smallest element in an array of integers.
+Exercise 9: Check for Palindrome Array
+
+Write a Java program to check if an array of integers is a palindrome, meaning it reads the same forwards and backwards.
+Exercise 10: Rotate Array to the Right
+
+Write a Java program to rotate the elements of an array to the right by a specified number of positions.
+Exercise 11: Find Duplicate Elements
+
+Write a Java program to find duplicate elements in an array of integers.
+Exercise 12: Shift Zeroes to the End
+
+Write a Java program to move all zeroes to the end of an array while maintaining the order of non-zero elements.

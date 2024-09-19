@@ -1,0 +1,36 @@
+Exercise 1: Reverse a String
+
+Write a Java program to reverse a given string.
+Exercise 2: Count Vowels and Consonants
+
+Write a Java program to count the number of vowels and consonants in a given string.
+Exercise 3: Check Palindrome
+
+Write a Java program to check if a given string is a palindrome (reads the same forwards and backwards).
+Exercise 4: Count Words in a String
+
+Write a Java program to count the number of words in a given string.
+Exercise 5: Remove Whitespaces
+
+Write a Java program to remove all whitespaces from a given string.
+Exercise 6: Find Substring Occurrences
+
+Write a Java program to find all occurrences of a substring within a given string.
+Exercise 7: Replace Substring
+
+Write a Java program to replace all occurrences of a substring with another substring in a given string.
+Exercise 8: Capitalize Words
+
+Write a Java program to capitalize the first letter of each word in a given sentence.
+Exercise 9: Check Anagrams
+
+Write a Java program to check if two strings are anagrams of each other. An anagram is a word or phrase formed by rearranging the letters of another.
+Exercise 10: Find Longest Word
+
+Write a Java program to find the longest word in a sentence.
+Exercise 11: Reverse Words in a Sentence
+
+Write a Java program to reverse the words in a sentence.
+Exercise 12: Count Character Frequency
+
+Write a Java program to count the frequency of each character in a given string.
