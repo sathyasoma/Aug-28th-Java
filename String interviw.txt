@@ -1,0 +1,90 @@
+1. What is a String in Java?
+
+Answer: In Java, a String is a sequence of characters that represents text. 
+It is a class in the Java standard library and is widely used for manipulating text data.
+2. How do you create a String in Java?
+
+Answer: There are multiple ways to create a String in Java:
+Using string literals: String str = "Hello, World!";
+Using the new keyword: String str = new String("Hello, World!");
+3. Explain the difference between String, StringBuilder, and StringBuffer.
+
+Answer:
+String is immutable, meaning its content cannot be changed after creation.
+StringBuilder is mutable and is used when you need to perform multiple modifications on a string efficiently.
+StringBuffer is similar to StringBuilder but is synchronized, making it thread-safe but potentially slower in a multi-threaded environment.
+4. How do you concatenate strings in Java?
+
+Answer: You can concatenate strings in Java using the + operator or by using the concat() method. For example:
+
+String str1 = "Hello";
+String str2 = "World";
+String result = str1 + " " + str2;
+5. What is string immutability, and why is it important?
+
+Answer: String immutability means that the content of a String cannot be changed after it's created. It is important because it allows Java to optimize memory usage and caching. Immutable strings are also safe to share between multiple threads without synchronization.
+6. How do you compare two strings in Java for equality?
+
+Answer: You can compare strings for equality using the equals() method. For example:
+
+String str1 = "Hello";
+String str2 = "Hello";
+boolean isEqual = str1.equals(str2); // isEqual will be true
+7. What is the difference between == and .equals() when comparing strings?
+
+Answer:
+== compares the memory addresses of the string objects and checks if they reference the same object in memory.
+.equals() compares the actual content of the strings to check if they have the same characters.
+8. How do you find the length of a string in Java?
+
+Answer: You can use the length() method to find the length of a string. For example:
+
+String str = "Hello, World!";
+int length = str.length(); // length will be 13
+9. What is the purpose of the charAt() method in Java strings?
+
+Answer: The charAt() method is used to retrieve the character at a specific index within a string. For example:
+
+String str = "Hello";
+char character = str.charAt(0); // character will be 'H'
+10. How do you convert a string to uppercase or lowercase in Java?
+- Answer: You can use the toUpperCase() and toLowerCase() methods to convert a string to uppercase or lowercase, respectively. For example:
+java String str = "Hello"; String upperCaseStr = str.toUpperCase(); // upperCaseStr will be "HELLO" String lowerCaseStr = str.toLowerCase(); // lowerCaseStr will be "hello"
+
+11. How do you check if a string contains a specific substring in Java?
+- Answer: You can use the contains() method or the indexOf() method to check if a string contains a specific substring. For example:
+java String text = "Hello, World!"; boolean containsSubstring = text.contains("World"); // containsSubstring will be true int indexOfSubstring = text.indexOf("World"); // indexOfSubstring will be 7
+
+12. Explain the concept of string pooling in Java.
+- Answer: String pooling is a mechanism in Java where string literals with the same content are stored in a common pool to save memory. When you create a string using a string literal, Java checks if an identical string already exists in the pool and reuses it instead of creating a new one.
+
+13. What is the purpose of the substring() method in Java strings?
+- Answer: The substring() method is used to extract a portion of a string. You can specify the starting and ending indexes to extract a substring. For example:
+java String text = "Hello, World!"; String substring = text.substring(7, 12); // substring will be "World"
+
+14. How do you remove leading and trailing whitespace from a string in Java?
+- Answer: You can use the trim() method to remove leading and trailing whitespace from a string. For example:
+java String text = " Hello, World! "; String trimmedText = text.trim(); // trimmedText will be "Hello, World!"
+
+15. Explain the split() method in Java strings.
+- Answer: The split() method is used to split a string into an array of substrings based on a specified delimiter. For example:
+java String text = "apple,banana,cherry"; String[] fruits = text.split(","); // fruits will be {"apple", "banana", "cherry"}
+
+16. How can you reverse a string in Java?
+- Answer: You can reverse a string in Java by converting it to a StringBuilder, using its reverse() method, and then converting it back to a string. For example:
+java String text = "Hello"; StringBuilder reversed = new StringBuilder(text).reverse(); String reversedString = reversed.toString(); // reversedString will be "olleH"
+
+17. What is the purpose of the replace() method in Java strings?
+- Answer: The replace() method is used to replace all occurrences of a specific character or substring in a string with another character or substring. For example:
+java String text = "Hello, World!"; String replacedText = text.replace("World", "Java"); // replacedText will be "Hello, Java!"
+
+18. How do you check if a string is empty or null in Java?
+- Answer: You can use the isEmpty() method to check if a string is empty and the null keyword to check if it's null. For example:
+java String str1 = ""; // Empty string String str2 = null; // Null string boolean isEmpty = str1.isEmpty(); // isEmpty will be true boolean isNull = (str2 == null); // isNull will be true
+
+19. What is the purpose of the format() method in Java strings?
+- Answer: The format() method is used to create formatted strings using placeholders and arguments. It is similar to C's printf() function. For example:
+java String formatted = String.format("Hello, %s!", "sathya"); // formatted will be "Hello, sarhya!"
+
+20. Explain the concept of an immutable string in Java and its benefits.
+- Answer: An immutable string in Java cannot be changed once it's created. Its benefits include thread safety, easier caching, and efficient memory usage, as multiple strings with the same content can share the same memory location.

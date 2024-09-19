@@ -1,0 +1,70 @@
+What is polymorphism in Java?
+
+Answer: Polymorphism is one of the four fundamental principles of Object-Oriented Programming (OOP) and refers to the ability of objects to take on multiple forms. In Java, polymorphism allows objects of different classes to be treated as objects of a common superclass through inheritance and method overriding.
+
+Explain the two types of polymorphism in Java.
+
+Answer: Java supports two types of polymorphism:
+
+Compile-time (Static) Polymorphism: This is achieved through method overloading. In method overloading, multiple methods in the same class have the same name but different parameters (either different types or a different number of parameters). The compiler determines which method to call based on the method's signature at compile time.
+
+Run-time (Dynamic) Polymorphism: This is achieved through method overriding. In method overriding, a subclass provides a specific implementation for a method that is already defined in its superclass. The determination of which method to call happens at runtime based on the actual object type.
+
+What is method overloading?
+
+Answer: Method overloading in Java is the practice of defining multiple methods in the same class with the same name but different parameters. The parameters can differ in terms of the number of parameters or their types. Method overloading is a form of compile-time polymorphism because the compiler determines which method to call based on the arguments passed during the method invocation.
+
+What is method overriding?
+
+Answer: Method overriding in Java is a mechanism that allows a subclass to provide a specific implementation for a method that is already defined in its superclass. The overriding method in the subclass should have the same method signature (name, return type, and parameters) as the method in the superclass. Method overriding is a form of runtime polymorphism because the actual method to be called is determined at runtime based on the object's type.
+
+Can you override a static method in Java?
+
+Answer: No, you cannot override a static method in Java. Static methods belong to the class itself, not to individual objects, so they cannot be overridden by subclasses. However, it is possible to declare a static method with the same name in a subclass, but this is called method hiding, not overriding.
+
+Explain the "super" keyword in Java and its role in method overriding.
+
+Answer: The "super" keyword in Java is used to refer to the superclass of the current object. In the context of method overriding, you can use "super" to call a method from the superclass that has been overridden in the subclass. This is often used when you want to extend the behavior of the superclass's method while still using its functionality.
+
+What is the difference between method overloading and method overriding?
+
+Answer: The key differences between method overloading and method overriding in Java are as follows:
+
+Method Overloading: Involves defining multiple methods in the same class with the same name but different parameters. Resolution is done at compile time. The return type may or may not be different.
+
+Method Overriding: Involves providing a specific implementation for a method that is already defined in the superclass. The method in the subclass has the same name, return type, and parameters as the method in the superclass. Resolution is done at runtime.
+
+What is the importance of the "@Override" annotation in method overriding?
+
+Answer: The "@Override" annotation is used to indicate to the compiler that a method in a subclass is intended to override a method in its superclass. Using this annotation helps catch errors at compile time if there is a mismatch between the overridden method and the method it is supposed to override. It is considered good practice to use "@Override" when implementing method overriding.
+
+Give an example of dynamic polymorphism in Java.
+
+Answer: Dynamic polymorphism is demonstrated through method overriding. Here's an example:
+
+java
+Copy code
+class Animal {
+    void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myAnimal = new Dog(); // Upcasting
+        myAnimal.makeSound(); // Calls the overridden method in Dog
+    }
+}
+In this example, even though myAnimal is declared as an Animal reference, it refers to a Dog object. At runtime, the makeSound() method of the Dog class is invoked, demonstrating dynamic polymorphism.
+
+What is the "instanceof" operator used for?
+
+Answer: The "instanceof" operator in Java is used to test whether an object is an instance of a particular class, interface, or subclass. It returns a boolean value (true or false). This operator is commonly used to perform type checking before casting objects to a specific type to avoid ClassCastException errors.

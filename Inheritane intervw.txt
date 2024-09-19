@@ -1,0 +1,90 @@
+1. What is inheritance in Java, and why is it important?
+
+Answer: Inheritance is a fundamental concept in object-oriented programming that allows a class (subclass or derived class) to inherit properties and behaviors (fields and methods) from another class (superclass or base class). It promotes code reusability and the creation of a hierarchy of classes.
+2. Explain the difference between superclass and subclass in Java.
+
+Answer:
+Superclass (Base class): A superclass is a class that is extended or inherited by another class. It provides common attributes and methods that can be reused by subclasses.
+Subclass (Derived class): A subclass is a class that inherits attributes and methods from a superclass. It can also add its own attributes and methods or override the inherited ones.
+3. How is inheritance achieved in Java, and what keyword is used to extend a class?
+
+Answer: Inheritance in Java is achieved using the extends keyword. To create a subclass that inherits from a superclass, you declare the subclass using the extends keyword followed by the name of the superclass. For example:
+
+class Subclass extends Superclass {
+    // Subclass members
+}
+4. What is method overriding in Java?
+
+Answer: Method overriding is a feature in Java that allows a subclass to provide a specific implementation of a method that is already defined in its superclass. The overridden method in the subclass should have the same name, return type, and parameters as the method in the superclass.
+5. What is the super keyword used for in Java?
+
+Answer: The super keyword is used to access members (fields or methods) of the superclass from within a subclass. It can be used to call the superclass constructor, access superclass methods, or access superclass fields that are hidden by subclass fields.
+6. Explain the concept of "method hiding" in Java.
+
+Answer: Method hiding occurs when a subclass defines a static method with the same name, return type, and parameters as a static method in its superclass. In this case, the subclass method "hides" the superclass method, and the method called depends on the reference type, not the object type.
+7. Can a Java class inherit from multiple classes (multiple inheritance)?
+
+Answer: No, Java does not support multiple inheritance of classes. A Java class can inherit from only one superclass. However, a class can implement multiple interfaces, achieving a form of multiple inheritance through interface implementation.
+8. What is the difference between superclass reference and subclass reference for an object of the subclass?
+
+Answer:
+superclass reference: When you use a superclass reference to refer to an object of a subclass, you can only access members (fields and methods) defined in the superclass. Any overridden methods in the subclass will be called based on the object's actual type.
+subclass reference: When you use a subclass reference to refer to an object, you can access both superclass and subclass members. Overridden methods in the subclass will be called, and you can access additional members defined in the subclass.
+9. What is the purpose of the final keyword when applied to a class or method in Java?
+
+Answer:
+final class: When applied to a class, it indicates that the class cannot be extended or inherited by any subclass.
+final method: When applied to a method, it indicates that the method cannot be overridden by any subclass. The method's implementation is considered final.
+10. How does the protected access modifier affect inheritance in Java?
+
+
+- **Answer:** The `protected` access modifier allows subclass members to access members (fields and methods) of the superclass. It provides a level of visibility that makes superclass members accessible to subclasses without exposing them to external classes.
+
+11. What is a constructor in Java, and how does it relate to inheritance?
+
+
+- **Answer:** A constructor in Java is a special method used for initializing objects. Inheritance in Java involves the inheritance of constructors from the superclass to the subclass. If a subclass constructor is not explicitly defined, it will call the default (no-argument) constructor of the superclass. If the superclass does not have a default constructor, the subclass constructor must explicitly call one of the superclass constructors using the `super` keyword.
+12. What is the "is-a" relationship, and how does it relate to inheritance?
+
+
+- **Answer:** The "is-a" relationship is a concept in object-oriented programming that signifies that a subclass is a type of its superclass. Inheritance models the "is-a" relationship because a subclass inherits properties and behaviors from its superclass. For example, if you have a `Bird` superclass and a `Sparrow` subclass, you can say that a `Sparrow` is-a `Bird`.
+13. What is method overloading in Java, and how is it different from method overriding?
+
+
+- **Answer:** 
+  - Method overloading is the process of defining multiple methods in a class with the same name but different parameter lists (different number or types of parameters). Overloaded methods have distinct signatures and are resolved at compile time based on the method's parameters.
+  - Method overriding is the process of providing a specific implementation of a method in a subclass that is already defined in its superclass. Overridden methods have the same name, return type, and parameters as the superclass method and are resolved at runtime based on the object's actual type.
+14. What is the instanceof operator in Java, and how is it used with inheritance?
+
+
+- **Answer:** The `instanceof` operator is used to test if an object is an instance of a particular class or interface. It is often used in conjunction with inheritance to check if an object is of a certain type before performing type-specific operations. For example:
+  ```java
+  if (myObject instanceof MyClass) {
+      // Perform operations specific to MyClass
+  }
+  ```
+15. How can you prevent a method in a superclass from being overridden by its subclasses?
+
+
+- **Answer:** You can prevent a method from being overridden by subclasses by declaring it as `final`. A `final` method cannot be overridden. Additionally, if you declare a class as `final`, it cannot be extended by any subclasses.
+16. What is method chaining in Java, and how can it be used with inheritance?
+
+
+- **Answer:** Method chaining is a programming technique where multiple methods are invoked on an object in a single statement. Inheritance allows method chaining when a subclass extends a superclass and adds its own methods while still being able to call methods from the superclass. This can lead to concise and readable code.
+17. What is the difference between method hiding and method overriding in Java?
+
+
+- **Answer:** 
+  - Method hiding occurs when a subclass defines a static method with the same name and signature as a static method in its superclass. The subclass method "hides" the superclass method, and the choice of which method to call is based on the reference type.
+  - Method overriding occurs when a subclass provides a specific implementation of a method that is already defined in its superclass. Overridden methods have the same name, return type, and parameters as the superclass method, and the choice of which method to call is based on the object's actual type.
+18. What is the Object class in Java, and how does it relate to inheritance?
+
+- **Answer:** The `Object` class is the root class for all Java classes. Every class in Java is either a direct or indirect subclass of `Object`. It provides basic methods, such as `equals()`, `hashCode()`, and `toString()`, that are inherited by all Java classes. You can also override these methods in your custom classes to provide specialized behavior.
+19. How can you achieve method abstraction in Java using inheritance?
+
+
+- **Answer:** Method abstraction can be achieved in Java by declaring abstract methods in a superclass and requiring subclasses to provide concrete implementations. An abstract method is declared using the `abstract` keyword and does not have a method body. Subclasses are then forced to implement the abstract method using the `@Override` annotation.
+20. Can a subclass access private members (fields and methods) of its superclass?
+
+
+- **Answer:** No, a subclass cannot directly access the private members of its superclass. Private members are not inherited by subclasses. However, protected, default, and public members of the superclass can be accessed by the subclass.
