@@ -1,0 +1,389 @@
+String is collection/group of charecters/
+ eg:  "string"
+ * String is a object
+ * String is non- primitive data type.
+ * it is pre defined class
+ *String present in java.lang pacakage
+ * super classs of string is object class
+
+there are two ways to create the objects
+ *by using Literal
+ *by using new keyword
+ 
+ String str="capgemini";
+  
+  String str1=new String("sathya");
+.
+
+
+String:
+=======
+String s= new String("sathya");
+  s.concat("prakash");
+  Sop(s);
+  
+o/p: sathya
+
+String is immutable, once we create the object it wont change.
+
+StringBuffer:
+-------------
+StringBuffer sb= new StringBuffer("sathya");
+  sb.append("prakash");
+  Sop(sb);
+  
+o/p: sathyaprakash
+
+StringBuffer is mutable, once we create the object it will be changed.
+
+case1:
+------
+String s1= new String("sathya");
+String s2= new String("sathya");
+
+Sop(s1==s2);      //false
+Sop(s1.equals()); //true
+
+*In the string(==) operator alwys meant for "reference" comparision.
+(if both references are point to same object,then returns "true")
+*Here String class is the child of Object,in the Object class we have 
+((.equals method)meant for reference/address comparision) But when 
+String class .equals methode Overridden for "content comparision"
+in string implimentation changed only checking for values.
+
+--
+StringBuffer sb1= new StringBuffer("sathya");
+StringBuffer sb2= new StringBuffer("sathya");
+
+Sop(sb1==sb2);      //false
+Sop(sb1.equals()); //false
+
+*In the StringBuffer(==)operator alwyas meant for reference comparision.
+(if both references are point to same object,then returns "true")
+*In the StringBuffer .equals method is not overridden thats why is referent compariosn from the object class.
+thats why in this .equals method also "false".
+
+case2:
+-----
+String s= new String("sathya");
+
+=>Whenevere we use "new "keyword compulsory one object will be created in the HEAP area.
+=>In this case "two" objects are created, one in the HEAP and one in the SCP. 
+(in the SCP object used for future purpose,but it only created implicitly not explicitly)
+
+
+String s="Sathya";
+
+=>In this case only one object created in SCP area.
+
+case3:
+=====
+String s1= new String("sathya");
+String s2= new String("sathya");
+String s3="Sathya";
+String s4="Sathya";
+
+         HEAP                  SCP
+		  2                       1
+      (s1)   (s2)             (s3,s4)
+
+=>Above case whenever we use new operator compulsory one object will be cretaed in HEAP. 
+we have two for that two object are created in the HEAP AREA, for future purpose one
+object created in the SCP. we have alrdy one object in the SCP one= s3 s4 use that object.
+
+
+case4:
+=======
+  String s= new String("sathya");
+   s.concat("prakash");
+   s=s.concat("soma")
+  
+          HEAP                        SCP
+		  sathya                    sathay
+		  sathyaprakash             prakash
+	s---->sathyasoma                 soma
+	
+From the 1st line new object willbe created in the HEAP and for future ref one created in SCP.
+Second line we use concat method,within that we have string literal"prakash" it craeted in the SCP 
+and one object created in the HEAP i.e "sathya prakash"	
+Third line in the HEAP sathaysoma object created, soma is string litteral thats why it is created in the SCP
+    sathya   and sathyaprakash goes to the garbage collection.
+	
+
+case:
+====
+	String s1= new String("U cannot change me");
+	String s2= new String("U cannot change me");
+	   Sop(s1==s2);//false
+	
+	String s3="U cannot change me";   
+	         Sop(s1==s3); //false
+			 
+	String s4="U cannot change me";   
+	         Sop(s3==s4);	//true	 
+	
+	String s5="U cannot"+ " change me";   
+	         Sop(s4==s5);//true	
+	
+	String s6="U cannot";
+	String s7=s6+"U cannot";
+	       Sop(s4==s7);	//false
+		   
+	final String s8="U cannot";
+	String s9=s8+"U cannot";
+	      Sop(s4==s9);	//true
+		  
+		  
+Advantage/importance String constant pool(SCP):
+====================---------------------
+In SCP single object can be referenced from multiple references.instead of creating 
+multiple new same object with one crore references is possible,performance and memory is benifited.
+
+Important constructor of String class:
+-------------------------------------
+String s- new String();  |->create empty string in SCP
+
+String s= new String(String literal);
+
+String s= new String(StringBuffer sb);
+
+String s= new String(StringBuilder sb);
+
+String s= new String(char[] ch);
+
+String s= new String(byte[] b);
+
+Important methods of String:
+==========================
+1.public char charAt(int index);
+  
+    String s="sathya"
+	          012345
+	     Sop(s.chatAt(4));  // y
+		 
+		 Sop(s.charAt(30));  RE:StringIndexOutOfBoundsException
+   
+2.public String concat(String s);
+
+    String s= new String("sathya");
+   s.concat("prakash");
+     Sop(s);   //sathyaprakash
+	
+3.public boolean equals(O Objec);
+     =>to check equality of string objects. and it consider case also.
+	 String s="SATHYA";
+	  Sop(s.equals("sathya")); //false
+
+4. public boolean equalsIgnoreCaase(string s);
+          =>where case ignored
+		String s="SATHYA";
+	  Sop(s.equals("sathya")); //true
+
+5.public boolean isEmpty();
+   it is checking string length is empty or not
+   
+    String s="";
+	String s1="durga";
+	 Sop(s.isEmpty()); // true
+	 Sop(s1.isEmpty());//false
+	 
+6.public boolean length();
+	=>To find num of charecters 
+	String s="sathya";
+	Sop(s.length()); //6
+
+7.public String replace(char old,char new);
+
+     String s="ababab"
+	 Sop(s.replace(a,b)); // bbbbbb
+
+8.public string substring(int begin);
+              to begin form to end of the index.
+		String s="abcdef";
+		Sop(s.substring(3));   //def
+9.public string substring(int begin, int end);
+        String s="abcdefg";
+		   Sop(s.substring(3,6));  //def
+10.public int indexof(char ch);
+      =>to specified index of char
+	  String s="sathya";
+	            012345
+	  
+	  Sop(s.inexOf(h));   //3
+      Sop(s.inexOf(z));   //-1
+
+11.public int last indexof(char ch);
+  String s="sathya";
+         Sop(s.inexOf(a)); //5
+
+12: public string toLower();
+13:public string toUpper();
+
+EXAMPLE:
+-------
+import  java.util.*
+class Test{
+
+    public static void main(String args[]){
+	
+	Scanner sc= new Scanner(System.in);
+	
+	Sop("Enter your city name");
+	 String name=sc.nextline().toLowerCase().trim();
+	 if(name.equals("hyderabd"))
+	 {
+	 Sop("hello hydrabadi..aadab");
+	 }
+	 else if(name.equals("chennai"))
+	 {
+	 Sop("hello madrasiii vanakkum");
+	 }
+	 else if(name.equals("bengalore"))
+	 {
+	 Sop("hello kannadia namaskar");
+	 }
+	 else
+	 {
+	 Sop("please enter valid city name");
+	
+	 }
+	}
+}
+    => In this programm 213 line by using toLowerCase() and trim() if end user enter any 
+	upper case or with the spaces it convert to lower case and trim the spaces executes sucesfully.
+	
+	  
+
+Related to immutabilty:
+------------------------
+String s = new String("sathya");
+   String s1=s.toUpperCase();//false 
+  String s3= s.toLowerCase(); //true
+  
+-------  
+       String s="sathya";
+	   String s1=s.toString();
+  String s2=s.toUpperCase();
+  String s3= s.toLowerCase();
+  
+Sop(s1==s2); //true
+Sop(s1==s3);//true
+Sop(s1==s4); //false
+
+How to create our own immutable class:
+---------------------------------------
+
+ final  class Test{
+ 
+           private int i;
+		    
+			Test()
+			{
+			this i=i;
+			}
+			public Test modify(int i)
+			{
+			if(this.i==i)
+			{
+			  return this;
+			}
+			else
+			{
+			  return new Test(i);
+			}
+			}
+  }
+  
+  =.declare class as final
+  
+  ans:explntn:   Test t1=new Test(10);
+                 Test t2=t1.modify(100);
+				 Test t3=t1.modify(10);
+				 sop(t1==t2);  //flase
+				 sop(t1==t3);  //true
+				 
+final vs immutabilty:
+=====================
+=>final terminology talks about variable , not object
+=>immutabilty talks about object, not for the variable. thats y both are different
+
+
+
+StringBuffer:
+=============
+
+All required changes will be performed in the existing object only.
+
+String buffer constructors:
+--------------------------
+StringBuffer sb= new StringBuffer();
+=>by defaultly the size of stringbuffer empty constructor size is"16"
+       if i want add 1 charecter to that it will 17 now the capacity is full at that 
+time new object created and add more spaces, now new object size is
+                                             new capacity=(	+1)*2= 34
+											                    16      + 1
+					
+ex:
+---
+1)StringBuffer sb= new StringBuffer();
+  Sop(sb.capacity());  //16  //defalut intial capcity
+  
+   sb.append("abcdefghijklmnop"); //16
+   sb.append("q"); //(16+1)*2=34
+   Sop(sb.capacity());//34
+   
+  =>Based on our requirment we can change the size of the StringBuffer
+  
+ 2) StringBuffer sb= new StringBuffer(1000);
+         Sop(sb.capacity());  //1000
+
+
+3)StringBuffer sb= new StringBuffer(String s);
+                   capacity=s.length()+initial capacity of SB
+				   
+	ex:
+	      SB sb=new Sb("sathya"); //6+16=22
+		  
+Important methods for StringBuffer:
+==================================
+1.public int length(); 
+        //how many chareacters in the object.
+2.public int capacity();
+        //how many charecters can be accomadate
+3. public int charAt(int index);
+
+       eg:   SB sb= new SB("sathya");
+		      sb.charAt(3);  //h
+	     
+		      sb.charAt(30); RE: StringIndexOutOfBoundException
+4.public void setcharAt(int index, char newchar);
+ 
+          eg:   SB sb= new SB("sathya");
+		            sb.setcharAt(0,p);  //pathya
+5.public SB insert(int index, String s);
+
+StringBuilder:
+=============
+
+
+String Vs StringBuffer Vs StringBuilder
+-------------------------------------
+String:
+-------
+  if the content is fixed wont changed frequently.
+StringBuffer:
+  Content is not fixed keep on changing ,but thread safety required at a time only one thread operate.
+StringBuilder:
+  If you dont want thread safety,content keep on changing.
+
+Method chaining:
+---------------------
+here method return type is same for all the methods thats why we used same return type.
+StringBuilder sb= new StringBuilder();
+
+sb.append("sathya").append("prakash").reverse().insert(2,6);
+ Sop(sb);
+  
+			  
+  
+																
