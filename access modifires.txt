@@ -1,0 +1,314 @@
+AccessModifiers :
+``
+
+accessmodifiers are representing whether are we able to acces those classe or
+interfaces or not?
+
+it will control the visibility over the packages.
+
+
+
+
+  we have 4 types of accessmodifiers are there
+  
+    1.private
+	
+	2.default(is not a keyword)
+	
+	3.protected
+	
+	4.public(universal access modifier)
+	
+	
+	
+private access modifier:
+````
+
+
+when we are defining any property as private access modifer , 
+we are allowed to access only with in the class 
+
+even if we are trying to access from some other class(with in the package) 
+we are not allowed to access.
+
+
+package com.capg.jse.accessmodifiers;
+
+public class Test1 {
+	
+	private int x=100;
+	private void display()
+	{
+		System.out.println("private value of x: " + x);
+		
+	}
+
+	public static void main(String[] args)
+	{
+		Test1 obj = new Test1();
+		System.out.println(obj.x);
+		System.out.println("=================");
+		obj.display();
+	}
+}
+
+Test2.java:
+``
+package com.capg.jse.accessmodifiers;
+
+public class Test2 {
+	
+	public static void main(String[] args) {
+		
+		
+		Test1 obj = new Test1();
+		
+		/*invalid-we can't access private properties from some other class of same pacakge
+		 * System.out.println(obj.x);
+		 		
+		obj.display();
+		
+		*/
+	}
+
+}
+
+
+default:
+``
+default is not a keyword.
+
+if we are not using any access modfier, by default it can be considering as
+default access modifier.
+
+if the access modfier is default, with in the package from some other class, 
+we are able to access.
+
+but from some other package from any class, we are not allowed to access.
+
+
+package com.capg.jse.accessmodifiers;
+
+public class Test1 {
+	//default properties
+	int x=100;
+	void display()
+	{
+		System.out.println("default value of x: " + x);
+		
+	}
+
+	public static void main(String[] args)
+	{
+		Test1 obj = new Test1();
+		System.out.println(obj.x);
+		System.out.println("=================");
+		obj.display();
+	}
+}
+
+
+-------------
+package com.capg.jse.accessmodifiers;
+
+public class Test2 {
+	
+	public static void main(String[] args) {
+		
+		
+		Test1 obj = new Test1();
+		
+	
+		System.out.println(obj.x);
+		 		
+		System.out.println("================");
+		obj.display();
+		
+		
+	}
+
+}
+
+
+---------------------
+package com.infy.jse.accessmodifiers;
+
+import com.capgemini.jse.accessmodifiers.Test1;
+
+public class Test3 {
+	
+	public static void main(String[] args) {
+		
+		Test1 obj = new Test1();
+		
+		/*
+		 * 
+		 * invalid: default propertes can't access from someother package classes
+		System.out.println(obj.x);
+		System.out.println("===========");
+		obj.display();
+		
+		*/
+		
+		
+	}
+
+}
+
+protected:
+`
+if the property is protected , we are able to acecss
+
+with in the package from any class.
+
+
+we can access only from some other package child classs
+
+not from some other package independent class.
+
+
+package com.capg.jse.accessmodifiers;
+
+public class Test1 {
+	//protected properties
+	protected int x=100;
+	protected void display()
+	{
+		System.out.println("protected value of x: " + x);
+		
+	}
+
+	public static void main(String[] args)
+	{
+		Test1 obj = new Test1();
+		System.out.println(obj.x);
+		System.out.println("=================");
+		obj.display();
+	}
+}
+
+
+Test2.java:
+```
+package com.capg.jse.accessmodifiers;
+
+public class Test2 {
+	
+	public static void main(String[] args) {
+		
+		
+		Test1 obj = new Test1();
+		
+	
+		System.out.println(obj.x);
+		 		
+		System.out.println("================");
+		obj.display();
+		
+		
+	}
+
+}
+-------------
+
+
+package com.infy.jse.accessmodifiers;
+
+import com.capg.jse.accessmodifiers.Test1;
+
+// other package sub class
+public class Test3 extends Test1 {
+	
+	public static void main(String[] args) {
+		
+		Test3 obj = new Test3();
+		
+		System.out.println(obj.x);
+		
+		System.out.println("============");
+		
+		obj.display();
+		
+		
+		
+		
+	}
+
+}
+
+
+public:
+`
+irrespective any package, we are able to access public properties 
+
+public --> universal access modifier.
+
+
+package com.capg.jse.accessmodifiers;
+
+public class Test1 {
+	//protected properties
+	public int x=100;
+	public void display()
+	{
+		System.out.println("public value of x: " + x);
+		
+	}
+
+	public static void main(String[] args)
+	{
+		Test1 obj = new Test1();
+		System.out.println(obj.x);
+		System.out.println("=================");
+		obj.display();
+	}
+}
+
+
+Test2.java:
+``
+package com.capg.jse.accessmodifiers;
+
+public class Test2 {
+	
+	public static void main(String[] args) {
+		
+		
+		Test1 obj = new Test1();
+		
+	
+		System.out.println(obj.x);
+		 		
+		System.out.println("================");
+		obj.display();
+		
+		
+	}
+
+}
+
+
+Test3(other package independent class):
+``````````
+
+package com.infy.jse.accessmodifiers;
+
+import com.capg.jse.accessmodifiers.Test1;
+
+// other package independent class
+public class Test3  {
+	
+	public static void main(String[] args) {
+		
+		Test1 obj = new Test1();
+		
+		System.out.println(obj.x);
+		System.out.println("============");
+		obj.display();
+		
+		
+		
+		
+	}
+
+}

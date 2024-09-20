@@ -1,0 +1,97 @@
+ 
+ Scanner(c):
+-----------
+it is pre defined class.
+scanner class is available in java.util.package.
+
+java provides various ways to read input from the keybpard,scanner class is one of them.
+
+it is the simplest way to get input in java.
+  by the help of scanner in java, we can get input from the user in primitive types such as
+           int,long,byte,float,double,short..etc
+Scanner class is extension of object class, and implemnts of iterator class and cloaseble interface.
+
+java scanner class provides nextxxx() methods to return the type of value such as
+  nextInt(),nextByte(),nextShort(),nextLine(),nextFloat,nextBoolean()
+  
+  Scanner scan=new Scanner(System.in);
+   
+   *System is the class present in java.lang, in is static property of system.
+  
+ 
+  
+ If i want to give messeges to the end user
+                     Syso("Enter Employee Id :")
+					        using this meassage end user can enter input that i will take from scanner
+							object  "scan"
+                           scan.nextInt();
+						   int Empid=scan.nextInt();
+				nextInt() return integer write int empid.
+				  it is the instance method of scanner class =>scan.nextInt()
+
+*recomonded to close scan.close()  there is a lekage 
+  
+  
+  Packeages:
+  =============
+  A java package is group of similar types of classes, interfaces and subpackages.
+  
+  two types of packages
+         built in package               user defined packages
+	
+*there are many built in pacakegs such as java, lang, awt ,javax,swing,net,io,util,sql..etc
+
+advantage:
+----------
+1.easily maintained: categorized into classes and interfaces
+2.access protection
+3.removesw naming collision
+4.increase the readebility
+5.searching process is easy
+
+userdefined pacakaege:
+====================
+if i want creat my own pacakage
+write the package name: package com.cg.active;
+* HERE it will create com folder within it cg folder within it active folder ther
+your dot(.)class file stored. 
+  
+  
+  compile: //javac filename.java
+                                 javac -d . filename.java
+					whenever we compile like this one folder will created
+  execute: // java filename
+                          java package com.cg.active.filename
+						  
+*all java pacakge is lowercase 
+
+
+java.lang package is the default pacakage for java class,you dont require to write import
+  
+  
+  
+  
+   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
