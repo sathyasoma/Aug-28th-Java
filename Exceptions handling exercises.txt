@@ -1,0 +1,524 @@
+Exercise 1: Divide by Zero Exception
+
+Write a Java program that divides two numbers and handles the "ArithmeticException" that occurs when dividing by zero.
+
+Solution:
+
+public class DivideByZeroExceptionHandling {
+    public static void main(String[] args) {
+        int numerator = 10;
+        int denominator = 0;
+
+        try {
+            int result = numerator / denominator;
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.err.println("Exception caught: " + e.getMessage());
+            System.err.println("Cannot divide by zero.");
+        }
+    }
+}
+Exercise 2: Array Index Out of Bounds Exception
+
+Write a Java program that attempts to access an element at an invalid index in an array and handles the "ArrayIndexOutOfBoundsException" that may occur.
+
+Solution:
+
+
+public class ArrayIndexExceptionHandling {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3};
+
+        try {
+            int element = numbers[5]; // Accessing an invalid index
+            System.out.println("Element: " + element);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.err.println("Exception caught: " + e.getMessage());
+            System.err.println("Index is out of bounds.");
+        }
+    }
+}
+Exercise 3: File Not Found Exception
+
+Write a Java program that attempts to open a file that does not exist and handles the "FileNotFoundException."
+
+Solution:
+
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class FileNotFoundExceptionHandling {
+    public static void main(String[] args) {
+        String filename = "nonexistent.txt";
+
+        try {
+            File file = new File(filename);
+            Scanner scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                System.out.println(scanner.nextLine());
+            }
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            System.err.println("Exception caught: " + e.getMessage());
+            System.err.println("File not found: " + filename);
+        }
+    }
+}
+Exercise 4: Custom Exception
+
+Write a Java program that defines a custom exception class and throws that exception within the program.
+
+Solution:
+
+
+class CustomException extends Exception {
+    public CustomException(String message) {
+        super(message);
+    }
+}
+
+public class CustomExceptionHandling {
+    public static void main(String[] args) {
+        try {
+            throw new CustomException("This is a custom exception.");
+        } catch (CustomException e) {
+            System.err.println("Exception caught: " + e.getMessage());
+        }
+    }
+}
+
+Exercise 5: Null Pointer Exception
+
+Write a Java program that attempts to access a method or property of an object that is null and handles the "NullPointerException."
+
+Solution:
+
+
+public class NullPointerExceptionHandling {
+    public static void main(String[] args) {
+        String str = null;
+
+        try {
+            int length = str.length(); // Attempting to access length of a null string
+            System.out.println("String length: " + length);
+        } catch (NullPointerException e) {
+            System.err.println("Exception caught: " + e.getMessage());
+            System.err.println("Object is null.");
+        }
+    }
+}
+Exercise 6: Input Mismatch Exception
+
+Write a Java program that reads an integer from the user but handles the "InputMismatchException" if the input is not a valid integer.
+
+Solution:
+
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class InputMismatchExceptionHandling {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            System.out.print("Enter an integer: ");
+            int number = scanner.nextInt();
+            System.out.println("You entered: " + number);
+        } catch (InputMismatchException e) {
+            System.err.println("Exception caught: " + e.getMessage());
+            System.err.println("Invalid input. Please enter an integer.");
+        } finally {
+            scanner.close();
+        }
+    }
+}
+Exercise 7: Multiple Exceptions
+
+Write a Java program that demonstrates the handling of multiple exceptions, including both checked and unchecked exceptions.
+
+Solution:
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class MultipleExceptionHandling {
+    public static void main(String[] args) {
+        FileInputStream fileInputStream = null;
+
+        try {
+            fileInputStream = new FileInputStream("nonexistent.txt");
+            int data = fileInputStream.read();
+            System.out.println("Read data: " + data);
+        } catch (FileNotFoundException e) {
+            System.err.println("FileNotFoundException caught: " + e.getMessage());
+        } catch (IOException e) {
+            System.err.println("IOException caught: " + e.getMessage());
+        } finally {
+            try {
+                if (fileInputStream != null) {
+                    fileInputStream.close();
+                }
+            } catch (IOException e) {
+                System.err.println("Error closing the file: " + e.getMessage());
+            }
+        }
+    }
+}
+Exercise 8: Propagating Exceptions
+
+Write a Java program that propagates an exception up the call stack and handles it at a higher level in the program.
+
+Solution:
+
+
+public class ExceptionPropagation {
+    public static void main(String[] args) {
+        try {
+            divideByZero();
+        } catch (ArithmeticException e) {
+            System.err.println("Exception caught at a higher level: " + e.getMessage());
+        }
+    }
+
+    public static void divideByZero() {
+        int numerator = 10;
+        int denominator = 0;
+        int result = numerator / denominator;
+        System.out.println("Result: " + result);
+    }
+}
+Exercise 9: Checked and Unchecked Exceptions
+
+Write a Java program that demonstrates both checked and unchecked exceptions. Handle these exceptions using appropriate try-catch blocks.
+
+Solution:
+
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+public class CheckedUncheckedExceptions {
+    public static void main(String[] args) {
+        try {
+            // Checked Exception: FileNotFoundException
+            FileInputStream fileInputStream = new FileInputStream("nonexistent.txt");
+            int data = fileInputStream.read();
+            System.out.println("Read data: " + data);
+
+            // Unchecked Exception: ArithmeticException
+            int numerator = 10;
+            int denominator = 0;
+            int result = numerator / denominator;
+            System.out.println("Result: " + result);
+        } catch (FileNotFoundException e) {
+            System.err.println("FileNotFoundException caught: " + e.getMessage());
+        } catch (ArithmeticException e) {
+            System.err.println("ArithmeticException caught: " + e.getMessage());
+        }
+    }
+}
+Exercise 10: Rethrowing Exceptions
+
+Write a Java program that catches an exception, performs some custom logic, and then rethrows the exception to be handled by the caller.
+
+Solution:
+
+
+public class RethrowException {
+    public static void main(String[] args) {
+        try {
+            divideByZero();
+        } catch (ArithmeticException e) {
+            System.err.println("Exception caught at a higher level: " + e.getMessage());
+        }
+    }
+
+    public static void divideByZero() {
+        int numerator = 10;
+        int denominator = 0;
+        try {
+            int result = numerator / denominator;
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.err.println("ArithmeticException caught: " + e.getMessage());
+            // Custom logic here
+            throw e; // Rethrow the exception
+        }
+    }
+}
+Exercise 11: Handling Multiple Exceptions
+
+Write a Java program that demonstrates the handling of multiple exceptions with a single catch block.
+
+Solution:
+
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class MultipleExceptionsSingleCatch {
+    public static void main(String[] args) {
+        FileInputStream fileInputStream = null;
+
+        try {
+            fileInputStream = new FileInputStream("nonexistent.txt");
+            int data = fileInputStream.read();
+            System.out.println("Read data: " + data);
+        } catch (FileNotFoundException | IOException e) {
+            System.err.println("Exception caught: " + e.getMessage());
+        } finally {
+            try {
+                if (fileInputStream != null) {
+                    fileInputStream.close();
+                }
+            } catch (IOException e) {
+                System.err.println("Error closing the file: " + e.getMessage());
+            }
+        }
+    }
+}
+Exercise 12: Custom Checked Exception
+
+Write a Java program that defines a custom checked exception class and throws that exception within the program.
+
+Solution:
+
+
+class CustomCheckedException extends Exception {
+    public CustomCheckedException(String message) {
+        super(message);
+    }
+}
+
+public class CustomCheckedExceptionHandling {
+    public static void main(String[] args) {
+        try {
+            throw new CustomCheckedException("This is a custom checked exception.");
+        } catch (CustomCheckedException e) {
+            System.err.println("CustomCheckedException caught: " + e.getMessage());
+        }
+    }
+}
+
+
+*************************************userdefined exceptions*******************************
+
+Exercise 1: Create a Custom Checked Exception
+
+Write a Java program that defines a custom checked exception class called CustomCheckedException and throws it within the program.
+
+Solution:
+
+
+// Custom Checked Exception
+class CustomCheckedException extends Exception {
+    public CustomCheckedException(String message) {
+        super(message);
+    }
+}
+
+public class CustomCheckedExceptionExample {
+    public static void main(String[] args) {
+        try {
+            throw new CustomCheckedException("This is a custom checked exception.");
+        } catch (CustomCheckedException e) {
+            System.err.println("CustomCheckedException caught: " + e.getMessage());
+        }
+    }
+}
+Exercise 2: Create a Custom Unchecked Exception
+
+Write a Java program that defines a custom unchecked exception class called CustomUncheckedException (extending RuntimeException) and throws it within the program.
+
+Solution:
+
+
+// Custom Unchecked Exception
+class CustomUncheckedException extends RuntimeException {
+    public CustomUncheckedException(String message) {
+        super(message);
+    }
+}
+
+public class CustomUncheckedExceptionExample {
+    public static void main(String[] args) {
+        try {
+            throw new CustomUncheckedException("This is a custom unchecked exception.");
+        } catch (CustomUncheckedException e) {
+            System.err.println("CustomUncheckedException caught: " + e.getMessage());
+        }
+    }
+}
+Exercise 3: Use Custom Checked Exception
+
+Write a Java program that demonstrates the use of a custom checked exception by creating a custom exception class called InsufficientFundsException for a bank account scenario.
+
+Solution:
+
+
+// Custom Checked Exception for Insufficient Funds
+class InsufficientFundsException extends Exception {
+    public InsufficientFundsException(String message) {
+        super(message);
+    }
+}
+
+class BankAccount {
+    private double balance;
+
+    public BankAccount(double initialBalance) {
+        this.balance = initialBalance;
+    }
+
+    public void withdraw(double amount) throws InsufficientFundsException {
+        if (amount > balance) {
+            throw new InsufficientFundsException("Insufficient funds to withdraw " + amount);
+        }
+        balance -= amount;
+    }
+}
+
+public class CustomCheckedExceptionUsage {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount(1000.0);
+        try {
+            account.withdraw(1500.0);
+        } catch (InsufficientFundsException e) {
+            System.err.println("InsufficientFundsException caught: " + e.getMessage());
+        }
+    }
+}
+In this exercise, we create a custom checked exception InsufficientFundsException to handle cases where a bank account has insufficient funds during a withdrawal operation.
+
+Exercise 4: Use Custom Unchecked Exception
+
+Write a Java program that demonstrates the use of a custom unchecked exception by creating a custom exception class called InvalidInputException for input validation.
+
+Solution:
+
+
+// Custom Unchecked Exception for Invalid Input
+class InvalidInputException extends RuntimeException {
+    public InvalidInputException(String message) {
+        super(message);
+    }
+}
+
+public class CustomUncheckedExceptionUsage {
+    public static void main(String[] args) {
+        String username = "user123";
+        if (username.length() < 6) {
+            throw new InvalidInputException("Username must be at least 6 characters long.");
+        }
+        System.out.println("Username: " + username);
+    }
+}
+
+Exercise 5: Custom Checked Exception with Parameters
+
+Write a Java program that defines a custom checked exception class called CustomCheckedException with additional parameters (such as error codes or details) and throws it within the program.
+
+Solution:
+
+
+// Custom Checked Exception with Parameters
+class CustomCheckedException extends Exception {
+    private int errorCode;
+
+    public CustomCheckedException(String message, int errorCode) {
+        super(message);
+        this.errorCode = errorCode;
+    }
+
+    public int getErrorCode() {
+        return errorCode;
+    }
+}
+
+public class CustomCheckedExceptionWithParameters {
+    public static void main(String[] args) {
+        try {
+            throw new CustomCheckedException("Custom checked exception with code", 404);
+        } catch (CustomCheckedException e) {
+            System.err.println("CustomCheckedException caught: " + e.getMessage());
+            System.err.println("Error code: " + e.getErrorCode());
+        }
+    }
+}
+In this exercise, we create a custom checked exception CustomCheckedException with an additional error code parameter.
+
+Exercise 6: Custom Unchecked Exception with Parameters
+
+Write a Java program that defines a custom unchecked exception class called CustomUncheckedException with parameters and throws it within the program.
+
+Solution:
+
+// Custom Unchecked Exception with Parameters
+class CustomUncheckedException extends RuntimeException {
+    private String errorDetails;
+
+    public CustomUncheckedException(String message, String errorDetails) {
+        super(message);
+        this.errorDetails = errorDetails;
+    }
+
+    public String getErrorDetails() {
+        return errorDetails;
+    }
+}
+
+public class CustomUncheckedExceptionWithParameters {
+    public static void main(String[] args) {
+        try {
+            throw new CustomUncheckedException("Custom unchecked exception", "Additional details: ABC");
+        } catch (CustomUncheckedException e) {
+            System.err.println("CustomUncheckedException caught: " + e.getMessage());
+            System.err.println("Error details: " + e.getErrorDetails());
+        }
+    }
+}
+In this exercise, we create a custom unchecked exception CustomUncheckedException with an additional error details parameter.
+
+Exercise 7: Custom Checked Exception for User Authentication
+
+Write a Java program that defines a custom checked exception class called AuthenticationException to handle authentication errors (e.g., invalid username or password).
+
+Solution:
+
+// Custom Checked Exception for Authentication
+class AuthenticationException extends Exception {
+    public AuthenticationException(String message) {
+        super(message);
+    }
+}
+
+class AuthenticationService {
+    public void authenticate(String username, String password) throws AuthenticationException {
+        if (!isValidCredentials(username, password)) {
+            throw new AuthenticationException("Authentication failed. Invalid username or password.");
+        }
+    }
+
+    private boolean isValidCredentials(String username, String password) {
+        // Add your authentication logic here
+        // For demonstration, we assume valid credentials
+        return true;
+    }
+}
+
+public class CustomCheckedExceptionForAuthentication {
+    public static void main(String[] args) {
+        AuthenticationService authService = new AuthenticationService();
+        try {
+            authService.authenticate("user123", "password123");
+            System.out.println("Authentication successful.");
+        } catch (AuthenticationException e) {
+            System.err.println("AuthenticationException caught: " + e.getMessage());
+        }
+    }
+}
