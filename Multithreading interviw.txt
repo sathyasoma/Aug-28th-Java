@@ -1,0 +1,274 @@
+1.What is multithreading in Java?
+Answer: Multithreading in Java is a process where multiple threads run concurrently to achieve parallelism. It allows a program to perform multiple tasks simultaneously, which can improve the performance and responsiveness of applications.
+
+2.What is the difference between a process and a thread?
+Answer: A process is an independent program in execution with its own memory space, while a thread is a smaller unit of a process that shares the same memory space with other threads within the same process. Threads within the same process can communicate more easily than processes.
+
+3.How do you create a thread in Java?
+Answer: There are two main ways to create a thread in Java:
+By extending the Thread class and overriding its run method.
+By implementing the Runnable interface and passing an instance of the implementing class to a Thread object.
+
+4.What are the states of a thread in Java?
+Answer: A thread can be in one of the following states:
+New: A thread that has been created but not yet started.
+Runnable: A thread that is ready to run and is waiting for CPU time.
+Blocked: A thread that is blocked and waiting for a monitor lock.
+Waiting: A thread that is waiting indefinitely for another thread to perform a particular action.
+Timed Waiting: A thread that is waiting for another thread to perform a particular action within a specified waiting time.
+Terminated: A thread that has exited.
+
+5.What is the synchronized keyword in Java?
+Answer: The synchronized keyword in Java is used to control access to a method or block of code by multiple threads. It ensures that only one thread can execute a synchronized method or block at a time, preventing race conditions and ensuring thread safety.
+
+6.What is a deadlock in Java?
+Answer: A deadlock is a situation in Java multithreading where two or more threads are blocked forever, waiting for each other to release resources. It usually occurs when two threads have a circular dependency on a pair of synchronized objects.
+Advanced Questions
+
+7.How can you avoid deadlock in Java?
+Answer: Deadlock can be avoided by:
+Avoiding nested locks.
+Using a timeout to acquire locks.
+Using a lock ordering or lock hierarchy.
+Employing deadlock detection mechanisms.
+
+8.What is the difference between wait() and sleep() in Java?
+Answer: The wait() method is used for inter-thread communication and releases the lock on the object, allowing other threads to acquire it. It can only be called from within a synchronized context. The sleep() method, on the other hand, pauses the execution of the current thread for a specified time without releasing the lock.
+
+9.What is the volatile keyword in Java?
+Answer: The volatile keyword in Java is used to indicate that a variable's value will be modified by different threads. It ensures that the value of the variable is always read from the main memory and not from the thread's local cache, ensuring visibility of changes across threads.
+
+10.Explain the ExecutorService framework in Java.
+Answer: The ExecutorService framework in Java is a higher-level replacement for working directly with threads. It provides a way to manage a pool of threads, allowing for efficient execution of asynchronous tasks. Key components include:
+FixedThreadPool: A thread pool with a fixed number of threads.
+CachedThreadPool: A thread pool that creates new threads as needed, but will reuse previously constructed threads when they are available.
+ScheduledThreadPool: A thread pool that can schedule commands to run after a given delay, or to execute periodically.
+Expert Questions
+
+11.What is a ThreadLocal variable in Java?
+Answer: A ThreadLocal variable in Java provides thread-local storage. Each thread accessing such a variable has its own, independently initialized copy of the variable. ThreadLocal can be used to maintain per-thread context information, such as user sessions or transaction IDs.
+
+12.Explain the concept of the Fork/Join framework in Java.
+Answer: The Fork/Join framework is a parallel computing framework introduced in Java 7, designed to take advantage of multiple processors. It works by recursively breaking down a task into smaller subtasks, executing them in parallel, and then combining their results. The ForkJoinPool class is used to manage the worker threads for this framework.
+
+13.What is a thread in Java?
+Answer: A thread in Java is a lightweight process that allows concurrent execution of tasks within a program. It runs inside a process and shares the process’s resources but operates independently.
+
+14.How do you create a thread in Java?
+Answer: There are two primary ways to create a thread in Java:
+By extending the Thread class and overriding its run method.
+By implementing the Runnable interface and passing an instance of the implementing class to a Thread object.
+
+// Extending Thread class
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread is running");
+    }
+}
+// Implementing Runnable interface
+class MyRunnable implements Runnable {
+    public void run() {
+        System.out.println("Thread is running");
+    }
+}
+
+15.What is the difference between start() and run() methods in Java threads?
+Answer: The start() method is used to begin the execution of a thread. It internally calls the run() method. The run() method contains the code that is executed by the thread. If you call run() directly, it won’t start a new thread but will execute in the current thread.
+
+16.What is the synchronized keyword in Java?
+Answer: The synchronized keyword is used to control access to a method or block of code by multiple threads to prevent concurrent modification of shared resources. It ensures that only one thread can execute the synchronized code at a time.
+
+public synchronized void synchronizedMethod() {
+    // critical section code
+}
+
+public void synchronizedBlock() {
+    synchronized (this) {
+        // critical section code
+    }
+}
+
+17.What are the main states of a thread in Java?
+Answer: A thread in Java can be in one of the following states:
+New: The thread is created but not yet started.
+Runnable: The thread is ready to run and waiting for CPU time.
+Blocked: The thread is waiting for a monitor lock to enter a synchronized block/method.
+Waiting: The thread is waiting indefinitely for another thread to perform a particular action.
+Timed Waiting: The thread is waiting for a specified period.
+Terminated: The thread has completed execution.
+
+18.What is a ThreadGroup in Java?
+Answer: ThreadGroup is a way to group multiple threads into a single object. It allows you to manage multiple threads as a single unit. Operations such as interrupting all threads in the group can be performed at once.
+
+19.What is the purpose of the yield() method in Java?
+Answer: The yield() method is a static method of the Thread class that causes the currently executing thread to temporarily pause and allow other threads of the same or higher priority to execute. It helps to improve the responsiveness of the application but does not guarantee any particular scheduling behavior.
+Thread.yield();
+
+20.What is the sleep() method in Java, and how is it used?
+Answer: The sleep() method is a static method of the Thread class that pauses the execution of the current thread for a specified period. It throws an InterruptedException if another thread interrupts the current thread while it is sleeping.
+
+try {
+    Thread.sleep(1000); // Sleep for 1000 milliseconds (1 second)
+} catch (InterruptedException e) {
+    e.printStackTrace();
+}
+
+21.What is the join() method in Java?
+Answer: The join() method is used to wait for a thread to die. It ensures that the calling thread waits until the specified thread completes its execution.
+
+Thread t = new Thread(() -> {
+    // Task to run
+});
+t.start();
+t.join(); // Wait for t to finish
+
+22.What is a Daemon thread in Java?
+Answer: A daemon thread is a background thread that runs continuously to perform tasks such as garbage collection. It is marked as a daemon using the setDaemon(true) method. The JVM does not wait for daemon threads to finish before exiting.
+
+Thread daemonThread = new Thread(() -> {
+    // Daemon task
+});
+daemonThread.setDaemon(true);
+daemonThread.start();
+
+23.What is thread priority, and how do you set it in Java?
+
+Answer: Thread priority in Java determines the relative priority of a thread compared to other threads. It is set using the setPriority() method and can range from Thread.MIN_PRIORITY (1) to Thread.MAX_PRIORITY (10), with the default being Thread.NORM_PRIORITY (5).
+
+Thread t = new Thread(() -> {
+    // Task
+});
+t.setPriority(Thread.MAX_PRIORITY);
+
+24.What is a race condition in Java multithreading?
+Answer: A race condition occurs when two or more threads try to access and modify the same resource concurrently, leading to inconsistent or incorrect results. Synchronization is typically used to prevent race conditions.
+
+25.What is inter-thread communication in Java, and how is it achieved?
+Answer: Inter-thread communication in Java allows threads to communicate and coordinate their actions. It is achieved using methods like wait(), notify(), and notifyAll() from the Object class. These methods must be called within synchronized context.
+
+synchronized (lock) {
+    lock.wait(); // Wait for notification
+    lock.notify(); // Notify one waiting thread
+    lock.notifyAll(); // Notify all waiting threads
+}
+
+26.What is the Runnable interface in Java, and why is it used?
+Answer: The Runnable interface represents a task that can be executed by a thread. It has a single method run(), which contains the code to be executed. It is used to define the task that a thread will execute without needing to extend the Thread class, allowing for more flexible and modular code.
+
+class MyRunnable implements Runnable {
+    public void run() {
+        System.out.println("Runnable is running");
+    }
+}
+
+Thread t = new Thread(new MyRunnable());
+t.start();
+
+27.Explain the Callable interface in Java. How is it different from Runnable?
+
+Answer: The Callable interface is similar to Runnable, but it can return a result and throw a checked exception. It has a single method call(), which returns a value. This is different from Runnable which does not return any value or throw checked exceptions.
+
+import java.util.concurrent.Callable;
+
+class MyCallable implements Callable<Integer> {
+    public Integer call() throws Exception {
+        return 123;
+    }
+}
+
+28.What is a Future in Java?
+Answer: A Future represents the result of an asynchronous computation. It provides methods to check if the computation is complete, to wait for its completion, and to retrieve the result. It is used with Callable to get the result of a background task.
+
+import java.util.concurrent.*;
+
+Callable<Integer> callable = new MyCallable();
+ExecutorService executor = Executors.newSingleThreadExecutor();
+Future<Integer> future = executor.submit(callable);
+Integer result = future.get(); // blocks until the result is available
+
+29.What is an Executor in Java?
+Answer: The Executor interface provides a way to decouple task submission from the mechanics of how each task will be run, including details such as thread use, scheduling, etc. It has a single method execute(Runnable command) for executing tasks.
+
+Executor executor = Executors.newSingleThreadExecutor();
+executor.execute(new MyRunnable());
+
+30.What is ExecutorService in Java, and how is it different from Executor?
+Answer: ExecutorService is an extension of the Executor interface that provides methods for managing the lifecycle of tasks and the executor itself. It includes methods for submitting tasks, shutting down the executor, and managing task completion.
+
+ExecutorService executorService = Executors.newFixedThreadPool(2);
+executorService.submit(new MyRunnable());
+executorService.shutdown();
+
+31.What is the ScheduledExecutorService in Java?
+Answer: ScheduledExecutorService is an interface that extends ExecutorService and supports future and periodic task execution. It is used to schedule tasks to run after a delay or to execute periodically.
+
+ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+scheduler.schedule(() -> System.out.println("Task executed"), 5, TimeUnit.SECONDS);
+scheduler.shutdown();
+
+32.What is the Fork/Join framework in Java?
+Answer: The Fork/Join framework, introduced in Java 7, is designed to efficiently execute tasks that can be broken into smaller subtasks recursively. It uses the ForkJoinPool to manage worker threads and the ForkJoinTask for tasks that use the fork() and join() methods to split and combine subtasks.
+
+import java.util.concurrent.RecursiveTask;
+import java.util.concurrent.ForkJoinPool;
+
+class Fibonacci extends RecursiveTask<Integer> {
+    private final int n;
+    Fibonacci(int n) { this.n = n; }
+
+    protected Integer compute() {
+        if (n <= 1) return n;
+        Fibonacci f1 = new Fibonacci(n - 1);
+        f1.fork();
+        Fibonacci f2 = new Fibonacci(n - 2);
+        return f2.compute() + f1.join();
+    }
+}
+
+ForkJoinPool pool = new ForkJoinPool();
+int result = pool.invoke(new Fibonacci(10));
+
+33.Explain the lock interface in Java.
+Answer: The Lock interface provides a broader range of locking operations than can be obtained using synchronized methods and statements. It allows for more flexible locking operations, such as trying to acquire a lock without blocking, interruptible lock acquisition, and timed lock waits.
+
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+Lock lock = new ReentrantLock();
+lock.lock();
+try {
+    // critical section
+} finally {
+    lock.unlock();
+}
+
+34.What is a ReentrantLock in Java?
+Answer: ReentrantLock is a class that implements the Lock interface and provides the same basic behavior and semantics as the synchronized keyword, with additional features such as fairness, try-locking, and interruptible lock waits.
+
+ReentrantLock lock = new ReentrantLock();
+lock.lock();
+try {
+    // critical section
+} finally {
+    lock.unlock();
+}
+
+35.What is a Semaphore in Java?
+Answer: A Semaphore is a synchronization aid that restricts the number of threads that can access a resource. It maintains a set of permits, and threads must acquire a permit to proceed. When done, they release the permit.
+
+import java.util.concurrent.Semaphore;
+
+Semaphore semaphore = new Semaphore(3); // 3 permits available
+semaphore.acquire();
+try {
+    // critical section
+} finally {
+    semaphore.release();
+}
+
+36.What is the purpose of volatile keyword in Java?
+Answer: The volatile keyword is used to mark a variable as being stored in main memory. Every read of a volatile variable will be read from the main memory, and every write will be written to the main memory. It ensures visibility of changes to variables across threads.
+private volatile boolean flag = true;
+
+37.What is thread safety in Java?
+Answer: Thread safety means that a class or method can be safely used by multiple threads at the same time without causing data inconsistency or corruption. Achieving thread safety typically involves synchronizing access to shared resources.

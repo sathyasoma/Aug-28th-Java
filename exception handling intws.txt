@@ -1,0 +1,83 @@
+1.What is an exception in Java?
+Answer: An exception in Java is an event or error condition that occurs during the execution of a program and disrupts the normal flow of program instructions.
+
+2.What is the difference between checked and unchecked exceptions?
+Answer: Checked exceptions are exceptions that are checked at compile-time, and the programmer is required to handle or declare them using try-catch blocks or specifying them in the method signature using the throws keyword. Unchecked exceptions, on the other hand, are not checked at compile-time and include subclasses of RuntimeException. Handling them is optional.
+
+3.Explain the hierarchy of the Exception class in Java.
+Answer: In Java, the java.lang.Exception class is the root class for all exception classes. It has two main subclasses: java.lang.RuntimeException (for unchecked exceptions) and java.lang.Error (for serious errors that are typically not recoverable).
+
+4.What is the purpose of the try-catch block?
+Answer: The try-catch block is used for handling exceptions in Java. Code within the try block is monitored for exceptions, and if an exception occurs, the code in the catch block is executed to handle the exception.
+
+5.What is the purpose of the finally block?
+Answer: The finally block is used to execute code that should always be run, regardless of whether an exception is thrown or not. It is often used for cleanup operations like closing resources (e.g., files or database connections).
+
+6.Explain the difference between throw and throws in Java.
+Answer:
+throw is used to explicitly throw an exception within a method or block.
+throws is used in a method signature to indicate that the method may throw exceptions of a specified type, and it delegates the responsibility of handling those exceptions to the caller.
+
+7.Can you catch multiple exceptions in a single catch block?
+Answer: Yes, starting from Java 7, you can catch multiple exceptions in a single catch block by separating them with a vertical bar (|). For example:
+
+catch (IOException | SQLException e) {
+    // Handle IOException or SQLException
+}
+
+8.What is the try-with-resources statement in Java?
+Answer: The try-with-resources statement is used for automatically closing resources (e.g., streams, files, sockets) when they are no longer needed. It simplifies resource management and helps prevent resource leaks. It was introduced in Java 7.
+
+9.What is the purpose of the NullPointerException in Java, and how can you avoid it?
+Answer: NullPointerException is thrown when you try to access or call a method on an object reference that is null. To avoid it, always check if an object reference is null before attempting to access its properties or methods.
+
+10.Can you give an example of custom exception handling in Java?
+Answer: Yes, you can create custom exceptions by extending the Exception class or one of its subclasses. For example:
+class MyCustomException extends Exception {
+    public MyCustomException(String message) {
+        super(message);
+    }
+}
+11.What are the differences between throw and throws in Java?
+Answer:
+throw is used to explicitly throw an exception within a method or block.
+throws is used in the method signature to indicate that the method may throw exceptions of a specified type, and it delegates the responsibility of handling those exceptions to the caller.
+
+12.What is the purpose of the finally block, and when is it executed?
+Answer: The finally block is used to specify code that should always be executed, regardless of whether an exception is thrown or not in the try block. It is often used for cleanup operations, such as closing resources. The finally block executes after the try block completes, and if an exception is thrown, it executes after the corresponding catch block.
+
+13.Explain the difference between Error and Exception in Java.
+Answer:
+Error is a subclass of Throwable and represents serious, unrecoverable problems that should not be caught or handled by the program. Examples include OutOfMemoryError and StackOverflowError.
+Exception, on the other hand, is a subclass of Throwable that represents exceptional conditions that can be caught and handled in a program. Exceptions are further divided into checked exceptions (which must be handled) and unchecked exceptions (which may or may not be handled).
+
+14,Can you catch multiple exceptions in a single catch block? If so, how?
+
+Answer: Yes, starting from Java 7, you can catch multiple exceptions in a single catch block by separating them with a vertical bar (|). For example:
+
+catch (IOException | SQLException e) {
+    // Handle IOException or SQLException
+}
+
+15.What is the purpose of the try-with-resources statement in Java, and how does it work?
+Answer: The try-with-resources statement is used for automatic resource management, specifically for closing resources like files, streams, and sockets when they are no longer needed. It was introduced in Java 7. When used, these resources are automatically closed at the end of the try block, even if an exception occurs, provided that the resources implement the AutoCloseable interface.
+
+16.What is the difference between RuntimeException and Exception in Java?
+Answer:
+RuntimeException is a subclass of Exception and is typically used to represent unchecked exceptions. Unchecked exceptions do not need to be explicitly declared in the method signature or caught using try-catch blocks.
+Exception, on the other hand, is a superclass of RuntimeException and is often used to represent checked exceptions. Checked exceptions must be either caught or declared in the method signature using the throws keyword.
+
+17.How do you create and use custom exceptions in Java?
+
+Answer: To create a custom exception in Java, you need to create a new class that extends Exception or one of its subclasses. For example:
+
+public class MyCustomException extends Exception {
+    public MyCustomException(String message) {
+        super(message);
+    }
+}
+You can then throw instances of your custom exception using throw and catch them using try-catch blocks like any other exception.
+
+18.What is the purpose of the NullPointerException in Java, and how can you avoid it?
+
+Answer: NullPointerException is thrown when you attempt to access or invoke methods on an object reference that is null. To avoid it, always ensure that object references are properly initialized before using them, and use conditional checks to verify if an object is null before attempting to access its properties or methods.
