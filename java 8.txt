@@ -1,0 +1,2247 @@
+java 8 
+==================
+java 8 features came into the picture 2014, march 18th
+
+
+
+**python,R, scala ()
+      * by above using language we can write 10 lines of code
+	     * But in the case of java we are writting 100 lines of code
+	thats why we are going to "concise" our code, then they introduced "java 8 features".
+	
+**By Enableing  "functional programming " we are going to write concise code
+
+
+
+1.Lamda expression
+2.Functional interface
+3.Default methods and static methods
+4,predefined functional interfaces
+     predicate
+	 Function
+	 supplier
+	 Consumer
+	 etc...
+	 
+5.Double colon operator(::)
+     method reference
+	 constructor reference
+	 
+6. Streams
+7.Date and Time API
+8.Optional class
+9.Nashorn javascript Engine
+
+
+
+1.Lamda Expression:
+-------------------
+1930 in mathmatics came into picture they easily solved problems by using "lamda expression"
+
+  =>> developers think why dont we use this "lamda" in our programminglanguage
+the 1st functional programing language is  "LISP"
+
+
+---
+PYTHON,LISP,C,C++,RUBY,SCALA,
+                    fINALLY IN "JAVA"
+					
+The main objective of lamda expression: 
+                 To bring benefits of functional programming into java.
+				 
+
+What is lamda expression:?
+==========================
+
+It is an anonymous (nameless) function.
+        
+		  nameless
+		  without returntype
+		  without modifiers
+		  
+
+==> to print hello in java how we can write?
+
+      //by using java
+	  
+public void m1()
+{
+   System.out.println("hello");
+}
+
+//by using lamda xpression
+
+()->{   System.out.println("hello");}  //lamda expression
+
+     **in body if we have only "single" statement we can remove curly braces optional
+	 
+	 ()->System.out.println(Hello);  //lamda xpression
+	 
+
+	 
+eg 2:
+=====
+
+public void m2(int a, int b)
+{
+System.out.println(a+b);
+}	 
+
+
+//by using lamda expression
+
+
+(int a, int b)->{System.out.println(a+b)}
+
+or  //compiler guess "type" automatically then we can remove type also
+
+(a,b)->System.out.println(a+b);
+	 
+	 
+	 
+	 
+eg 3:
+======
+
+
+public int squareit(int n)
+{
+return n*n;
+}
+	 
+//by using lamda expression
+
+
+(int n)->{return n*n;}
+
+or
+
+
+(n)-> n*n; 	
+
+
+or //if we have only one parameter in the braces we can remove braces also
+
+n->n*n;
+
+n->return n*n;==========>invalid	
+n->{return n*n;};====>valid
+n->{return n*n};===>invaid
+n->{ n*n;};===>invalid
+n->n*n;--->valid
+
+
+Rules:
+------
+=====
+
+1. without curly braces we cannot use "return" keyword. compiler will considerd returend
+value automatically.
+2.within curly braces if we want return some value compulsory we sholud use return statement.
+
+ 
+
+
+
+
+
+eg 3:
+=====
+
+public void m3(String s)
+{
+return s.length();
+}
+
+ 
+//by using lamda expression
+
+
+s->s.length();
+
+
+-------------------->
+
+we know how to write "lamda expression" 
+         =>now how to call lamda expression?
+
+FI(Functional Interface):
+=========================
+
+word is old.
+
+
+
+Runnable-----> run()
+Comparable----------->compareTo()
+Comparetor--------->compare()
+ActionListner==>actionPerformed()
+Callable-->call()
+
+SAM(single abstract method)
+
+
+--> the purpose of functional interfcae to call the lamda expression.
+
+    Once we write lamda expression 
+	   Functional interfcae
+	 which contains single abstract methods(SAM)
+
+
+functional interface wrto Inheritance:
+======================================
+
+@FunctionalInterface
+interface A{
+
+public void m1();
+
+}
+@FunctionalInterface
+interface B extends A
+{
+
+
+}
+
+
+// above program is valid 
+  why means we have only one abstract method in classa A . when we extends B a class method
+    came to B but there is no other method in the class B thats why its valid.
+
+eg 2:
+-----
+
+@FunctionalInterface
+interface A{
+
+public void m1();
+
+}
+@FunctionalInterface
+interface B extends A
+{
+public void m1();
+
+}
+		 
+
+//above code is valid
+
+   even if we have same method in child class, it will treat as method override, thats why
+      "no error"
+
+ 
+eg 3:
+-----
+
+@FunctionalInterface
+interface A{
+
+public void m1();
+
+}
+
+@FunctionalInterface
+interface B extends A
+{
+public void m2();
+
+}
+
+
+//above program is Invalid
+
+   here we have another method in the child classs thats why in child now we have "two" methods
+     But IN FUNCTIONAL INTERFCAE WILL ALLOW NLY SINGLE ABSTRACT METHOD
+
+
+eg 4:
+-----
+
+@FunctionalInterface
+interface A{
+
+public void m1();
+
+}
+
+
+interface B extends A          //Normal Interface
+{
+public void m2();
+
+}
+
+//above program is valid
+
+   here the child interface is normal interface it will allow the abstract methods 
+
+		 
+	 
+Lamda Expression with Functional Interface;
+=========================================
+
+
+without lamda:
+--------------
+
+
+interface Interf{
+
+  public void m1();
+}	 
+class Demo implements Interf{
+
+  public void m1()
+  {
+  System.out.println("Helloo....");
+  }
+
+}	 
+
+public class Test{
+
+  public static void main(String args){
+    
+	Demo d= new Demo();
+	
+	d.m1();
+      
+  }
+}
+	 
+
+with lamda:
+-----------
+	 
+ interface Interf{
+
+  public void m1();
+}	 
+	 
+public class Test{
+
+  public static void main(String args){
+    
+	Interf i= ()->System.out.println("Hellooo..by lamda"); // we can call by using parent to child
+	                                         //by using interface only we can call lamd exprsn
+	i.m1();  
+      
+  }
+}	 
+ 
+ 
+ ** here above program, if you want call or use lamda expression we need to use 
+ functional interface.
+	 
+     ** by using interface object we can invoke the method.
+
+
+	 
+	 
+	lamda exprssion with multithreading:
+==========================================
+
+without lamda:
+================
+
+
+class MyRunnable implements Runnable{
+
+   public void run(){
+      for(int i=0;i<=10;i++){
+	     System.out.println("child thread");
+	  }
+   }
+
+}
+public class Test{
+   public static void main(String rags[]){
+   
+   MyRunnable r= new MyRunnable();
+   
+   Thread t= new Thread(r);
+   
+   t.start();
+   
+         for(int i=0;i<=10;i++){
+	     System.out.println("main thread");
+	  }
+   
+   
+   
+   
+   }
+
+}
+
+
+	
+with lamda:
+==========
+	 
+
+public class Test{
+   public static void main(String rags[]){
+   
+   Runnable r=()->{
+           for(int i=0;i<=10;i++){
+	     System.out.println("child thread");
+	  }
+   };
+   
+   Thread t= new Thread(r);
+   
+   t.start();
+   
+         for(int i=0;i<=10;i++){
+	     System.out.println("main thread");
+	  }  
+   }
+}
+	 
+	 
+
+lamda expression with collections:
+===================================
+
+class MyComparator implements Comparator<Integer>
+{
+
+   public int campare(Integer i1,Integer i2)
+   {
+      if(i1<i2)
+	    {
+		  return -1;
+		}
+	  else if(i1>i2)
+	    {
+		 return +1;
+		}
+	else 
+	   {
+	  return 0;
+	   }
+   }
+
+}
+clas Test{
+
+
+public static void main(String args[]){
+
+
+    ArrayList<Integer> al= new ArrayList<Integer>();
+	
+	     al.add(20);
+		 al.add(10);
+		 al.add(6);
+		 al.add(30);
+		 al.add(15);
+		 al.add(9);
+		 al.add(0);
+		 System.out.println(al);
+		 
+		 Collections.sort(al,new MyCamparator());
+		 
+		 	 System.out.println(al);
+
+}
+
+}
+
+
+
+with lamda:
+==========
+
+
+
+
+clas Test{
+
+
+public static void main(String args[]){
+
+
+    ArrayList<Integer> al= new ArrayList<Integer>();
+	
+	     al.add(20);
+		 al.add(10);
+		 al.add(6);
+		 al.add(30);
+		 al.add(15);
+		 al.add(9);
+		 al.add(0);
+		 System.out.println(al);
+		 
+		 Comparator c=(i1,i2)->(i1<i2)?-1:(i1>i2):1?:0;   //lamda xprsn
+		 
+		 Collections.sort(al,c);
+		 
+		 System.out.println(al);
+
+}
+
+}
+
+
+employee with collections:
+===========================
+without lamda:
+=============
+class Employee{
+
+    int eno;
+	String ename;
+	
+	Public Employee(eno,ename){
+	
+	   this.eno=eno;
+	   this.ename=ename;
+	}
+	public string toString()
+	{
+	   return eno+" "+ename;
+	}
+}
+class Test{
+
+  public static void main(String args[]){
+  
+  
+     ArrayList<Employee> al= new ArrayList<Employee>();
+	 
+	   al.(new Employee(123,"DIVYA"));
+	   al.(new Employee(126,"tarun"));
+	   al.(new Employee(129,"mahesh"));
+	   al.(new Employee(121,"ammulu"));
+	   
+	 System.out.println(al);
+  }
+
+}
+
+with lamda:
+----------
+class Employee{
+
+    int eno;
+	String ename;
+	
+	Public Employee(eno,ename){
+	
+	   this.eno=eno;
+	   this.ename=ename;
+	}
+	public string toString()
+	{
+	   return eno+" "+ename;
+	}
+}
+class Test{
+
+  public static void main(String args[]){
+  
+  
+     ArrayList<Employee> al= new ArrayList<Employee>();
+	 
+	   al.(new Employee(123,"DIVYA"));
+	   al.(new Employee(126,"tarun"));
+	   al.(new Employee(129,"mahesh"));
+	   al.(new Employee(121,"ammulu"));
+	   
+	 System.out.println(al);
+	 
+	 Collections.sort(al,(e1,e2)->(e1.eno<e2.eno)?-1:(e1.eno>e2.eno)?1:0);
+	 
+	 System.out.println(al);
+  }
+
+}
+
+
+Anonymous Inner classes Vs lamda expression:
+==========================================
+
+Thread t = new Thread();
+
+
+
+Thread t= new Thread()
+{
+
+....
+};
+
+==>we are writting a class that extends Thread class.
+
+**
+Runnable r= new Runnable()
+{
+
+....
+};
+	 Runnable is an interface we cnt cretae object
+   here we are cretaing runnable implemeted class object.	
+	 
+ex:
+---
+innerclass
+============
+
+
+public Test{
+
+public static void main(String args[]){
+
+
+     Runnable r= new Runnable()
+	 {
+	   public void run(){
+	   
+	     for(int i=0;i<=10;i++){
+		    System.out.println("child thread");
+		 }
+	   }
+	 
+	 
+	 };  //inner class
+
+    Thread t= new Thread(r);
+	t.srart();
+	
+	for(int i=0;i<=10;i++){
+		    System.out.println("main thread");
+		 }
+}
+
+}
+	 
+innerclass with lamda expression:
+=================================
+
+
+public Test{
+
+public static void main(String args[]){
+
+
+     Runnable r=()->
+	 {
+	   
+	   
+	     for(int i=0;i<=10;i++){
+		    System.out.println("child thread");
+		 }
+	   
+	 
+	 
+	 };  //inner class
+
+    Thread t= new Thread(r);
+	t.srart();
+	
+	for(int i=0;i<=10;i++){
+		    System.out.println("main thread");
+		 }
+}
+
+}
+	 
+	 
+==>****here inner class is more power full than lamda expression
+	 
+how?
+
+interface A
+{
+   void m1();
+   void m2();
+   
+} 
+	//above code we canot do lamda expression why means there are two abstrct methods
+
+
+
+=>by using inner classes we can do
+    lets seee...
+	
+	interface A
+{
+   void m1();
+   void m2();
+   
+} 
+
+  A obj= new A()
+  {
+     public void m1()
+	 {
+	 }
+     public void m2()
+	 {
+	 }
+  };
+
+
+	
+	 
+==>Anonymous inner class != lamda expressions
+
+    If Anonymous Inner class implements an interface that contains SAM then only we can  replace 
+that anynomous inner class with lamda expression.
+	 
+	 
+Default Methods:
+=================
+
+until 1.7v = =>
+          every methd present in interface is public and abstract.
+
+        void m2();
+		public void m2();
+		abstract void m2();
+		public abstarct void m2();
+		
+		   this many ways we can represent write the abstract methods
+		   
+Related methods:
+---------------
+1.8 v: defalut + static methods 
+1.9 v : private methods
+
+
+Default Method | Virtual Extension method | Defener Method
+=========================================================
+
+
+interface I{
+
+public void m1();
+public void m2();
+
+}
+
+class Test implements I{
+  public void m1(){}
+  public void m2(){}
+}    		  
+class Test1 implements I{
+  public void m1(){}
+  public void m2(){}
+}    		  
+class Test100 implements I{
+  public void m1(){}
+  public void m2(){}
+}    		  
+	  	 
+====> * By using interface we can implements any number of classes 
+                        But IN THE FUTURE if you want add any method in the interface 
+				you need to implemnts all classes.
+
+** without effecting implemnting clases if we want  add new  method to the interface => defalut method	
+
+
+	
+interface Interf{
+
+   defalut void m1()  // defalut is not "modifier" ; its defalut implemntation
+   {
+   System.out.println("default method");
+   }
+}	  //if you want use it u can use other wise u can override this defalut method
+
+class Test implements Interf{
+   
+        public void m1()  // defalut is not "modifier" ; its defalut implemntation
+   {
+   System.out.println("ovverriden version of default method");
+   }
+public static void main(String args[]){
+
+    Test t= new Test();
+	   t.m1();
+   
+}   
+
+}
+	
+	**we cannot take this defalut method in classses.
+	
+	
+multiple inheritance is may possible in by using defalut methods:
+=================================================================
+
+   in this way is also not possible.
+      but there is one way to define , we can overrirde that method we can write our own 
+implementation.
+
+
+eg:
+===
+
+interface Left{
+
+    defalut void m1()
+	{
+	System.out.println("Left interface m1 method");
+	}
+}
+
+interface Right{
+
+    defalut void m1()
+	{
+	System.out.println("Right interface m1 method");
+	}
+}
+
+class Test implements Left,Right{
+
+   public void m1()
+   {
+   System.out.println("our own method");
+   Left.super.m1();  // left interface method
+   Rught.super.m1();  //Right interface method
+   }
+
+public static void main(String args[]){
+
+     Test t= new Test();
+	 
+	    t.m1();
+       
+}
+}
+
+
+
+
+Static methods:
+===============
+
+
+
+class     Vs        Interface
+
+
+==> here class is costly compare to the interface
+    class is heavy weight compare to interface
+	in the class we need to cret the object for methods and vearibles
+	       interface are lightweight
+
+=>thats why they introduced static in interface
+
+
+
+
+interface Interf{
+
+  public static void m1()
+  {
+    System.out.println("interface static method");
+  }
+}	
+
+class Test implements Interf{
+
+public static void main(String args[]){
+
+      Interf.m1(); //-------------->valid
+	  m1();         //invalid
+	  Test.m1();   //invalid
+	  Test t= new Test(); 
+	    t.m1();	 //invalid     by defalut interface static methods are not valid in implmnt class
+
+
+}
+    
+
+}	   
+==> implementation class wont get interface static methods.
+
+==>1.8 v : onwards main method also possiblle in interface
+
+
+
+
+
+
+
+
+Predefined Functional Interfaces:
+===================================
+
+Predicate
+Function
+Consumer
+Supplier
+-----------
+Two argment predefined FI
+
+BiPredicate
+BiFunction
+BiConsumer
+-------
+
+Primitive Functional Interface
+
+IntPredicate
+IntFunction
+IntConsumer
+....
+
+
+
+Predicate:(I)
+==========
+public abstract boolean test(T t)
+
+
+
+interface Predicate<T>
+{
+   public boolean test(T t);
+}
+
+
+eg:
+--
+
+public boolean test(Integer I)
+{
+
+if(i%==2)
+{
+  return true;
+}
+else 
+{
+  return false;
+}
+
+}
+
+lamda:
+
+I->i%2==0;
+
+eg:
+---
+
+class Test{
+
+public static void main(String args[]){
+
+
+  Predicate<Integer> p1=i->i%2==0;
+  
+  System.out.println(p1.test(10)); //true
+  System.out.println(p1.test(15));  //false
+
+}
+
+}
+
+
+
+eg:
+===
+
+
+eg:
+---
+
+class Test{
+
+public static void main(String args[]){
+
+
+  Predicate<Employee> p1=e->e.salary>10000 && e.ishavingGF==true;
+  
+  System.out.println(p1.test(e)); 
+  
+
+}
+
+}
+
+
+eg:
+==
+Write a predicate to check wheather length of String is > 5 or not.
+
+
+Predicate<String> s1= s->s.length()>5;
+
+eg:
+---
+Write a predicate to check wheather length of String is > 5 or not.
+
+class Test{
+
+public static void main(String args[]){
+ 
+      String[] names={"nag","charan","tommy","choranjeevi"};
+
+  Predicate<String> p=s->s.length()>5;
+  
+   for(String s1:names)
+   {
+      if(p.test(s1))
+   {
+   System.out.println(s1);
+   }
+   }
+}
+
+}
+
+eg:
+----
+
+
+
+
+
+
+====
+
+class Employee{
+
+    String ename;
+	double esalary;
+	
+	Public Employee(String ename,double esalary){
+	
+	   this.ename=ename;
+	   this.esalary=esalary;
+	}
+	
+}
+class Test{
+
+  public static void main(String args[]){
+  
+  
+     ArrayList<Employee> al= new ArrayList<Employee>();
+	 
+	   al.(new Employee("DIVYA",1000));
+	   al.(new Employee("tarun",3000));
+	   al.(new Employee("mahesh",5000));
+	   al.(new Employee("ammulu",6000));
+	   
+	   Predicate<Employee> p= e->e.esalary>3000;
+	   
+	    for(Employee e1:al)
+		{
+		
+		   if(p.test(e1))
+		   {
+		   System.out.println(e1.ename+" "+e1.esalary);
+		   }
+		}
+	   
+	 
+  }
+
+}
+
+
+---------
+
+p1-->to check whether  the number is even or not
+p2-->to check whether  the number is greater than 10 or not
+
+
+p1.and(p2).test(34)
+
+in this casses we are going to use
+
+Predicate Joining:
+==================
+
+p1.or(p2)
+
+
+p1.negate(p2)
+
+
+eg:
+======> and method
+
+
+class Test{
+
+  public static void main(String args[]){
+  
+     int x[]={0,5,10,15,20,25,30,35};
+	 //and, or, negate()  ===> called these methods predicate joining
+	 
+	 predicate<Integer> p1=i->i%2==0; // number is ever or not
+	  predicate<Integer> p2=i->i>10;  //number is >10 or not
+	  
+	  System.out.println("the given number is even and grater than 10:");
+	  for(int x1:x)
+	  {
+	    if(p1.and(p2).test(x1))
+		    {
+			 System.out.println(x1);
+			}
+	  
+	  }
+  
+  }
+}
+
+eg:
+=======>or() method
+
+
+class Test{
+
+  public static void main(String args[]){
+  
+     int x[]={0,5,10,15,20,25,30,35};
+	 //and, or, negate()  ===> called these methods predicate joining
+	 
+	 predicate<Integer> p1=i->i%2==0; // number is ever or not
+	  predicate<Integer> p2=i->i>10;  //number is >10 or not
+	  
+	  System.out.println("the given number is even or> grater than 10:");
+	  for(int x1:x)
+	  {
+	    if(p1.or(p2).test(x1))
+		    {
+			 System.out.println(x1);
+			}
+	  
+	  }
+  
+  }
+}
+
+eg; negate:
+====
+
+
+class Test{
+
+  public static void main(String args[]){
+  
+     int x[]={0,5,10,15,20,25,30,35};
+	 //and, or, negate()  ===> called these methods predicate joining
+	 
+	 predicate<Integer> p1=i->i%2==0; // number is ever or not
+	  predicate<Integer> p2=i->i>10;  //number is >10 or not
+	  
+	  System.out.println("the given number is not even :");
+	  for(int x1:x)
+	  {
+	    if(p1.negate().test(x1))
+		    {
+			 System.out.println(x1);
+			}
+	  
+	  }
+  
+  }
+}
+
+Function:
+=========
+input==>perform some operation and produce results
+
+interface Function<T,p>
+{
+
+   public  R apply(T, t);
+}
+
+
+
+eg:
+===
+
+class Test{
+
+public static void main(String args[]){
+
+    Function<Integer,Integer> f=i->i*i;
+	
+	System.out.println(f.apply(6));  //36
+}
+}
+
+**Function interface wil take the two parameters, one is input parameter and aswell as return type parameter
+
+eg:
+===
+
+class Test{
+
+public static void main(String args[]){
+
+    Function<String,Integer> s=s->s.length();
+	
+	System.out.println(s.apply("sathya"));  
+	
+	Function<String,String> s=s->s.toUpperCase();
+	
+	System.out.println(s.apply("soma"));  //SOMA
+}
+}
+
+==>above program  input is string type, returntype is String
+
+
+eg:  input student object, return string(grade)
+====
+class Student{
+
+    String name;
+	int marks;
+	
+	Student(String name,int marks){
+	   this.name=name;
+	   this.marks=marks;
+	   
+	}
+
+}
+class Test{
+  public static void main(String args[]){
+  
+     Function<Student,String> f= s->{
+	  
+	               int marks=s.marks;
+				   String grad="";
+				   
+				   if (marks>=80) grade ="A[distinction]";
+				   elseif(marks>=60) grade ="B[first class]";
+				   elseif(marks>=60) grade ="c[second class]";
+				   elseif(marks>=35) grade ="d[thir class]";
+				   else grade ="E[faild]";
+				   return grade; 
+	 };
+	 
+	 student[] s={
+	                new Student("divya",93),
+					new Student("tarun",74),
+					new Student("soma",15),
+					new Student("mahesh",56),
+	 
+	 };
+	 
+	 for(student s1:s)
+	 {
+	    System.out.println("student name:"+s1.name);
+		System.out.println("student marks:"+s1.marks);
+		System.out.println("student grade:"+f.apply(s1));
+		System.out.println();
+	 }
+  }
+
+}
+
+
+
+
+
+
+function chaining 
+----
+f1.andThen(f2).apply(i);        =>first f1 and then followed by f2
+
+f1.compose(f2).apply(i);          => first f2 and then f1 
+
+ eg:
+ ---
+ class Test{
+ 
+ public static void main(String args[]){
+ 
+             Function<Integer,Integer> f1=i->2*i;     //2*2=4=>4*4*4=64
+			 Function<Integer,Integer> f2=i->i*i*i;   //2*2*2=8 =>2*8=16
+			 
+			 System.out.println(f1.andThen(f2).apply(2));   //64  
+			 System.out.println(f1.compose(f2).apply(2));   //16
+			 
+ }
+ }
+
+
+Consumer:
+====================================:
+
+consumer<T>   ---void
+
+consumer function take the input and will not return anything.
+
+
+eg:
+====
+
+class Test{
+
+public static void main(String args[]){
+
+
+   Consumer<String> c=s->System.out.println(s);
+   
+   c.accept("sathya");
+   
+   c.accept("soma divya");
+
+}
+
+
+}
+
+
+Supplier:
+=========
+just supply my required  objects and  it wont take any input -->supplier.
+
+
+interface Supplier<R>
+{
+
+public R get();
+}
+
+
+
+eg:
+===
+
+class Test{
+public static void main(String args[]){
+
+   Supplier<Date>  s=()->new Date();
+   
+   System.out.println(s.get());
+
+}
+}
+
+Supplier for Random OTP:
+========================
+
+6 digits any number in 0 to 9
+
+class Test{
+public static void main(String args[]){
+
+
+    Supplier<String> s=()-{
+	
+	            String otp="";
+				for(int i=0;i<6;i++){
+			
+				otp=otp+(int)(Math.random()*10);
+				}
+				return otp;
+	};
+    System.out.println(s.get());
+}
+
+}
+
+------------
+
+predicate---->test();
+Function---->apply();
+Consumer----->accept();
+Supplier----->get();
+
+for above functions we can take at a time only one "input"
+      if we want to take two inputs
+	  
+eg: whether the given number is even or not--> predicate
+ 
+   check the sum of given numbers are even or not-->?
+
+     BiPredicate:
+	 ==========
+
+eg:
+======
+
+       class Test{
+	     public static void main(String args[]){
+		 
+		     BiPredicate<Integer,Integer> p= (a,b)->(a+b)%2==0;
+			 
+			 System.out.println(p.test(10,20));   // true
+			 System.out.println(p.test(15,20));  //false
+		 }
+	   
+	   }
+
+
+
+**normal predicate can take only one input argument and perform some conditional check
+   Sometimes out programming requiremnets is we have to take 2 inputs aragmnets and perform some 
+conditional check. for this requiremnt we go for "BiPredicate".
+
+
+BiFunction:
+===========
+basically function can take only one argment and areturn any thing,
+   if we want take two argmnts and return any type. we sholud go for bIfUNCTION.
+   
+ EG:
+ ===
+ 
+ class Employee{
+      int eno;
+	  String ename;
+	  Employee(int eno,String ename)
+	  {
+	     this.eno=eno;
+		 this.ename=ename;
+	  }
+ }
+   class Test{
+     public static void main(Stringa rgs[]){
+	     
+		 ArrayList<Employee> l= new ArrayList<Employee>();
+		   BiFunction<Integer,String,Employee> f= (eno,ename)->new Employee(eno,ename);
+		   
+		   l.add(f.apply(100,"divya"));
+		   l.add(f.apply(101,"tarun"));
+		   l.add(f.apply(102,"mahesh"));
+		   l.add(f.apply(103,"ammulu"));
+		   
+		   for(Employee e:l){
+		   
+		     System.out.println("employee number:"+e.eno);
+			 System.out.println("employee name:"+e.ename);
+			 System.out.println();
+		   } 
+	 }
+   }
+
+
+BiConsumer:
+==========
+
+Q) WHY BiSupplier functional interface not available?
+
+supplier interface method (get() method) wont take any argemnts,just it will supply.
+
+Primitive Version of Functional interface:
+=======================================
+
+PRIMITIVE PREDICATE TYPES:
+==========================
+
+IntPredicate
+DoublePredicate
+LongPredicate
+
+Primitive FunctionTypes:
+==================
+Double Function:  can take double input
+                           but return anytype
+						   
+IntFunction :    can take int as input 
+LongFunction:   can take long as input
+
+DoubleToIntFunction: can take double as input
+                           return type is int 
+              methodanme: applyAsInt(double value);
+
+DoubleToLong :  can take as double input
+                     return type is Long
+	              methodanme: applyAsLong(double value);
+
+IntToDoubleFunction : 
+
+                 applyAsDouble();
+IntToLongFunction  :
+                    
+					applyAsLong();
+LongToIntFunction  :
+              
+			      applyAsInt();
+LongToDoubleFunction: 
+                   applyAsDouble();
+				   
+				   ----------
+				   
+				  
+				  
+ToIntFunction ------->return Type is Int
+                        input can be anything
+ToLongFunction---------->
+ToDoubleFunction----->
+
+=======
+
+ToIntBiFunction------> inputs can be any type , but return type is "int"
+
+                            int applyAsInt(T t,U u);
+ToLongBiFunction-----
+ToDoubleBiFunction---
+					 
+
+
+==============
+primitive types consumer:
+=======================
+
+IntConsumer
+     void accept(int value)
+	 performs this operation on the given argment.
+LongConsumer
+DoubleConsumer
+
+---
+
+ObjDoubleConsumer<T>
+void accept(T t, double value)
+ObjIntConsumer<T>
+ObjLongConsumer<T>
+===
+
+primitive types of supplier:
+---------------
+BooleanSupplier 
+
+      boolean  getAsBoolean()
+	  
+Int Supplier
+    long getAsInt()
+
+LongSupplier
+DoubleSupplier
+
+---
+UnaryOperator<T>  : input and output is same type
+
+  it is child of function
+  
+
+
+
+
+
+
+
+
+
+
+
+Method and Constructor Reference:
+*************************************
+alternative for "lamda expression"
+                                  ==> method and constructor ref:
+								  
+method reference:
+==================
+
+
+public Test{
+
+public static void m1()  // this method we are goingto use as method ref
+{
+    for(int i=0; i<=10;i++){
+	   System.out.println("child thread");
+	}
+
+}
+public static void main(String args[]){
+
+
+     Runnable r= Test::m1();         // double colan operator is used alternate for lamda
+	                                 // purpose is "code reusbility"
+	
+    Thread t= new Thread(r);
+	t.srart();
+	
+	for(int i=0;i<=10;i++){
+		    System.out.println("main thread");
+		 }
+}
+
+}
+
+
+__==>
+if methods are 
+
+static method:  Test::m1();
+instance method: objref::m1()
+
+note:
+====
+you can take any method but it will match with the run() method argments that sholud be the same alwys
+
+eg:
+===
+
+
+
+interface Interf{
+
+  public void add(int a, int b);
+}
+
+class Test{
+
+   public static void sum(int x, int y)
+   {
+     System.out.println("the sum is:"(x+y));
+   }
+public static void main(String args[]){
+
+      Interf i=(a,b)->System.out.println("the sum is:"+(a+b));
+	    i.add(10,20);
+	
+	 Interf i1= Test::sum;
+	  i1.add(100,200);
+}
+}
+
+
+
+when implaemtation is there then we go for "method reference"
+when there is no implemntaion hen we go for "lamda expression"
+
+
+
+
+
+
+Constructor Reference:
+=======================
+
+
+Test:: new  ===>constructor reference
+eg:
+===
+
+class Sample{
+
+ public Sample(){
+   System.out.println("sample class constructor");
+ }
+}
+interface Interf{
+   public Sample get();
+}
+
+class Test{
+
+   public static void main(String args[]){
+   
+      Interf i=Sample::new;
+	  Sample s1=i.get();
+   }
+}
+
+
+eg:
+--
+
+
+class Sample{
+
+ public Sample(String s){
+   System.out.println("sample class constructor with argment:"+s);
+ }
+}
+interface Interf{
+   public Sample get(String s);
+}
+
+class Test{
+
+   public static void main(String args[]){
+   
+      Interf i=Sample::new;
+	  Sample s1=i.get("sathya");
+   }
+}
+
+***********
+Streams::::
+************
+
+wt diff bwn collection and Streams.
+
+collection: 
+   if we want to represents group of objetcs as single entity then we should go for collectons.
+
+Streams;
+  if we want process objects from the collection then we go for streams.
+  
+  
+  Stream s=c.stream();   // java.util.stream pkg.
+
+
+eg:
+---
+
+class Test{
+public static void main(String args[]){
+ArrayList<Integer> l= new ArrayList<Integer>();
+l.add(10);
+l.add(5);
+l.add(14);
+l.add(15);
+l.add(20);
+l.add(56);
+System.out.println(l);
+ List<Integer> l2= l.stream().filter(i->i%2==0).collect(Collectors.toList());
+ 
+ System.out.println(l2);
+
+
+}}
+
+eg:
+====  (using map) "add marks 5 for every object"
+
+
+
+class Test{
+public static void main(String args[]){
+ArrayList<Integer> marks= new ArrayList<Integer>();
+marks.add(10);
+marks.add(5);
+marks.add(14);
+marks.add(15);
+marks.add(20);
+marks.add(56);
+System.out.println(marks);
+ List<Integer> updtemarks= marks.stream().map(i->i+5).collect(Collectors.toList());
+ 
+ System.out.println(updtemarks);
+
+
+}}
+
+** for every object i want new object whenever i do modifications then we go for "map"
+
+
+
+eg:
+====  count() method we are using;
+how many failed students
+
+class Test{
+public static void main(String args[]){
+ArrayList<Integer> marks= new ArrayList<Integer>();
+marks.add(70);
+marks.add(85);
+marks.add(14);
+marks.add(25);
+marks.add(10);
+marks.add(06);
+System.out.println(marks);
+ long failedStudents= marks.stream().filter(i->i<35).count();
+ 
+ System.out.println(failedstudents);
+
+
+}}
+
+
+--
+**methods
+stream(), filter(),map(), count(),collect()
+--
+
+
+eg:
+===   sorted() method
+
+
+class Test{
+public static void main(String args[]){
+ArrayList<Integer> marks= new ArrayList<Integer>();
+marks.add(70);
+marks.add(85);
+marks.add(14);
+marks.add(25);
+marks.add(10);
+marks.add(06);
+System.out.println(marks);
+
+ List sortedList= marks.stream().sorted().collect(Collectors.toList());
+ 
+ System.out.println(sortedList);
+}}
+
+* we are get natural sorting order
+
+
+
+
+eg:
+---	customized sorting order
+
+Comparator--comapre(obj1 ,obj2 )
+
+
+
+
+class Test{
+public static void main(String args[]){
+ArrayList<Integer> marks= new ArrayList<Integer>();
+marks.add(70);
+marks.add(85);
+marks.add(14);
+marks.add(25);
+marks.add(10);
+marks.add(06);
+System.out.println(marks);
+
+ List sortedList= marks.stream().sorted((i1,i2)->(i1<i2)?1:(i1>i2)?1:0).collect(Collectors.toList());
+ 
+ System.out.println(sortedList);
+}}
+
+
+
+*****
+(s1,s2)->s1.compareTo(s2)==>natural sorting order
+(s1,s2)->s2.compareTo(s1) ==>reverse sorting order
+(s1,s2)->-s1.compareTo(s2) ==>reverse sorting order
+
+
+***
+
+min() method
+max() method
+
+[3,4,5,9,24]==>Ascending Order  min=>3   max=24
+
+[23,9,5,4,3]  ==>descending order min=>23  max=3
+
+
+eg:
+===
+
+
+class Test{
+public static void main(String args[]){
+ArrayList<Integer> marks= new ArrayList<Integer>();
+marks.add(10);
+marks.add(5);
+marks.add(14);
+marks.add(15);
+marks.add(20);
+marks.add(56);
+System.out.println(marks);
+
+ List<Integer> minmarks= marks.stream().min((i1,i2)->i1.compareTo(i2)).get();
+ System.out.println(minmarks);
+
+List<Integer> maxmarks= marks.stream().max((i1,i2)->i1.compareTo(i2)).get();
+ System.out.println(maxmarks);
+ 
+   //desending order
+  List<Integer> minmarks= marks.stream().min((i1,i2)->-i1.compareTo(i2)).get();
+ System.out.println(minmarks);
+
+List<Integer> maxmarks= marks.stream().max((i1,i2)->-i1.compareTo(i2)).get();
+ System.out.println(maxmarks);
+}}
+
+
+=========
+
+* if you want to print elemnts one by one as a for loop.
+
+
+class Test{
+public static void main(String args[]){
+ArrayList<Integer> l= new ArrayList<Integer>();
+l.add(10);
+l.add(5);
+l.add(14);
+l.add(15);
+l.add(20);
+l.add(56);
+     System.out.println(l);
+
+     l.stream().forEach(System.out::println);
+	
+            
+}}
+
+
+eg:
+===
+
+class Test{
+public static void main(String args[]){
+ArrayList<Integer> l= new ArrayList<Integer>();
+l.add(10);
+l.add(5);
+l.add(14);
+l.add(15);
+l.add(20);
+l.add(56);
+     System.out.println(l);
+Consumer<Integer> c=i->{System.out.println("the square of "+i+ "is:"+(i*i))};
+
+     l.stream().forEach(c);
+	
+            
+}}
+
+
+***
+toArray() method
+     to convert stream objects into ArrayList
+	 
+	 
+eg:
+====
+
+class Test{
+public static void main(String args[]){
+ArrayList<Integer> l= new ArrayList<Integer>();
+l.add(10);
+l.add(5);
+l.add(14);
+l.add(15);
+l.add(20);
+l.add(56);
+     
+	 Integer[] i=l.stream().toArray(Integer []::new);   //constructor ref used here
+	
+	   for(Integer i1: i)
+	   {
+	     System.out.println(i1);
+	   }
+            
+}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+				
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
