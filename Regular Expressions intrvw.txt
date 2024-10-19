@@ -1,0 +1,40 @@
+1.What is a regular expression (regex) in Java?
+Answer: A regular expression, often referred to as a regex or regexp, is a pattern that defines a set of strings.
+In Java, regular expressions are used for pattern matching and text manipulation tasks.
+
+2.What is the java.util.regex package in Java, and what classes does it provide for working with regular expressions?
+Answer: The java.util.regex package provides classes for working with regular expressions in Java. 
+The main classes include Pattern (for compiling regex patterns) and Matcher (for matching patterns against input text).
+
+3.Explain the difference between the matches() and find() methods of the Matcher class.
+Answer:
+The matches() method attempts to match the entire input sequence against the regex pattern. It returns true if the entire input sequence matches the pattern.
+The find() method scans the input sequence for the next occurrence of the pattern. It returns true if the pattern is found anywhere in the input.
+
+4.What is a character class in a regex pattern, and how do you define one in Java?
+Answer: A character class in a regex pattern is a set of characters enclosed within square brackets ([]). 
+In Java, you can define a character class by placing the characters you want to match within the brackets. For example, [aeiou] matches any vowel.
+
+5.What is a quantifier in a regex pattern, and how do you use it to specify repetition?
+Answer: A quantifier in a regex pattern specifies how many times the preceding element (character, group, or character class) should be repeated. 
+Common quantifiers include * (zero or more), + (one or more), ? (zero or one), {n} (exactly n times), and {n, m} (between n and m times).
+
+6.How do you escape special characters in a regex pattern in Java?
+Answer: Special characters in a regex pattern, such as ., *, and +, must be escaped using a backslash (\) to match them literally. For example, 
+to match a period (.), you use \. in the pattern.
+
+7.What is a capturing group in a regex pattern, and how is it used?
+Answer: A capturing group is a part of a regex pattern enclosed in parentheses (). It captures the matched text so that it can be referenced 
+or extracted later. Capturing groups are useful for extracting specific information from a matched string.
+
+8.Explain the concept of anchors in regex patterns, and provide examples of anchors in Java.
+Answer: Anchors are used to specify the position in the input text where a match should occur. Common anchors include ^ (start of line), $ (end of line),
+ \b (word boundary), and \B (non-word boundary). For example, ^abc matches "abc" at the start of a line.
+
+9.What is a non-capturing group in a regex pattern, and how is it defined in Java?
+Answer: A non-capturing group is a group within a regex pattern that is used for grouping but does not capture the matched text. It is defined using
+ (?: ... ). Non-capturing groups are useful when you want to group expressions without creating a capturing group.
+
+10.What is the purpose of the java.util.regex.Pattern class in Java, and how do you compile a regex pattern?
+Answer: The java.util.regex.Pattern class is used to compile regex patterns into a Pattern object, which can then be used for matching operations.
+ To compile a regex pattern, you use the Pattern.compile() method, providing the pattern string as an argument.

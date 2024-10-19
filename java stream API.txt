@@ -1,0 +1,172 @@
+1. What is Java Stream API?
+Java 8 introduced the concept of stream, Stream represents a sequence of objects from a source, which supports aggregate operations. It works very well in conjunction with lambda expressions. We can engender a pipeline of stream operations to manipulate data by performing operations like search, filter, sort, count, map, etc. 
+
+2. What are Streams? 
+A Stream is a sequence of objects that operates on a source data structure and engender pipelined data that can be habituated to perform sundry operations.    
+
+3. What are the characteristics of Stream?
+ Following are the characteristics of a Stream −
+
+It takes input from the Collections, Arrays, or I/O channels. 
+It never stores the elements. 
+Stream supports intermediate operations like filter, map, limit, reduce, find, match, and so on. 
+Streams only provide the result as per the pipelined methods. 
+Stream operations do the iterations internally over the source elements provided. 
+
+4. What is Parallel Stream in Java Stream API? 
+Parallel streams enable us to execute code in parallel on separate cores. The final result is the coalescence of each individual outcome. However, the order of execution is out of our control. It may transmute every time we run the program.
+When the parallel stream is utilized the Java runtime partitions the stream into multiple sub-streams. This parallel execution of data, with each sub-stream running in a separate thread, will result in an increase in performance.
+
+5. How many types of Stream operations are there?
+Stream operations are divided into intermediate and terminal operations and are amalgamated to compose stream pipelines.
+
+Intermediate operations return an incipient stream. They are always lazy; executing an intermediate operation does not authentically perform any filtering, but instead engenders an incipient stream that, when traversed, contains the elements of the initial stream that match the given predicate.
+Terminal operations such as Stream.forEach or IntStream.sum, may traverse the stream to engender a result or a side-effect. After the terminal operation is performed, the stream pipeline is considered consumed, and can no longer be utilized. 
+
+6. What are Map operations in Java Stream API?
+Stream map returns a stream consisting of the results of applying the given function to the elements of the stream.
+
+Stream map is an intermediate operation. These operations are always lazy. Intermediate operations are invoked on a Stream instance and after they culminate their processing, they give a Stream instance as output.
+
+Learn Java 8 streams with an example - map() method 
+
+
+7. What is a collect method in the Java stream?
+The map() function is a method in the Stream class that represents a functional programming concept. In simple words, the map() is utilized to transform one object into another by applying a function. 
+
+8. What is the flatMap() method in Java?
+The flatMap() method applies operation as a mapper function and provides a stream of element values. It signifies that in each iteration of each element the map() method engenders a separate incipient stream. By utilizing the flattening mechanism, it merges all streams into a single resultant stream. In short, it is utilized to convert a Stream of Stream into a list of values.
+
+9. How to sort a list using Java Streams?
+Example 1: Sort the List In the natural order
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class DriverClass {
+    public static void main(String[] args) {
+        List<String> list = Arrays.asList("H", "A", "Z", "L",
+                "B", "Y", "M", "a", "c");
+        list.stream().sorted().collect(Collectors.toList()).
+                             forEach(System.out::println);
+    }
+}
+Output:
+
+A
+B
+H
+L
+M
+Y
+Z
+a
+c 
+ 
+Example 2: Sort the List In the reverse Order
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class DriverClass {
+
+    public static void main(String[] args) {
+        List<String> list = Arrays.asList("H", "A", "Z",
+                "L", "B", "Y", "M", "a", "c");
+        list.stream().sorted(Comparator.reverseOrder()).
+                            collect(Collectors.toList()).
+                                  forEach(System.out::println);
+    }
+}
+Output:
+
+c
+a
+Z
+Y
+M
+L
+H
+B
+A 
+
+10. What are Reduction Operations in Java Stream API?
+Stream API contains many terminal operations (such as average, sum, min, max, and count) that return one value by amalgamating the contents of a stream. These operations are called reduction operations because these operations minimize the stream to a single non-stream value.
+
+Example 1: Counting Empty String
+import java.util.*;
+import java.util.stream.Collectors;
+
+/*Counting Empty String*/
+public class DriverClass {
+    public static void main(String[] args) {
+        List<String> list = Arrays.asList("ss", "", "ss", "", "");
+        long count = list.stream().filter(o -> o.isEmpty()).count();
+        System.out.println(count);
+    }
+}
+
+Example 2: Count number of String which ends with "d"
+import java.util.*;
+
+/*Count number of String which ends with "d"*/
+public class DriverClass {
+    public static void main(String[] args) {
+        List<String> list = Arrays.asList("method", "static",
+                "void", "abstract", "ping");
+        long count = list.stream()
+                .filter(x -> x.endsWith("d")).count();
+        System.out.println(count);
+    }
+}
+
+Example 3: Count number of Odd numbers
+import java.util.*;
+
+/*Count number of Odd numbers*/
+public class DriverClass {
+    public static void main(String[] args) {
+        List<Integer> list = Arrays.asList(1, 4, 6, 7, 9, 11);
+        long count = list.stream().filter(x -> x%2!=0).count();
+        System.out.println(count);
+    }
+}
+
+Example 4: Count String whose length is more than 3 characters
+import java.util.*;
+
+/*Count String whose length is more than 3 characters*/
+public class DriverClass {
+    public static void main(String[] args) {
+        List<String> list = 
+                 Arrays.asList("saw", "wrong turn", 
+                      "walking dead", "nun", 
+                            "jurassic park");
+        long count = list.stream().
+                         filter(x -> x.length()> 3).count();
+        System.out.println(count);
+    }
+} 
+
+11. What does the filter() method do?
+The filter method is utilized to filter elements that slake a certain condition that is designated utilizing a Predicate function.  
+ 
+A predicate function takes an Object and returns a boolean. For example, if you have a List of Integers and you optate a list of odd integers.  In this case, you can utilize the filter to achieve that. 
+
+ 
+You supply a function to check if a number is even or odd, just like this function, and the filter will apply this to stream elements and filter the elements which gratify the condition and which don't. 
+
+12. What is a functional interface in Java?
+The Java functional interface was introduced in Java 8. A functional interface in Java is an interface that contains only a single abstract (unimplemented) method. A functional interface can contain default and static methods which do have an implementation, in integration to the single unimplemented method.
+
+13. What is Supplier and Consumer?
+A Supplier is any method that takes no arguments and returns a value. Its job is literally to supply an instance of an expected class. For instance, every reference to a 'getter' method is a Supplier.
+public Long getCount(){
+    return this.count;
+}
+ 
+A Consumer is any method that takes arguments and returns nothing. It is invoked for its side effects. In Java terms, a Consumer is an idiom for a void method. 'setter' methods are a good example.
+public void setCount(Long count){
+    this.count = count;
+} 

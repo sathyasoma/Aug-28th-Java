@@ -1,0 +1,96 @@
+1.What are the key features introduced in Java 8?
+Answer: Java 8 introduced several significant features, including Lambda Expressions, 
+the Stream API, the java.time package for date and time manipulation, the default and static methods in interfaces,
+and the java.util.function package for functional programming constructs.
+
+2.Explain Lambda Expressions in Java 8.
+Answer: Lambda Expressions are a new language feature in Java 8 that allows you to define anonymous functions 
+(methods without a name) concisely. They simplify code by providing a way to express instances of single-method 
+interfaces (functional interfaces) using a more compact syntax.
+
+3.What is a functional interface, and why are they important in Java 8?
+Answer: A functional interface is an interface that has exactly one abstract method. Functional interfaces are
+ important in Java 8 because they can be used with Lambda Expressions, making it easier to work with functional 
+ programming concepts.
+
+4.What is the Stream API in Java 8, and how is it used?
+Answer: The Stream API is a new abstraction in Java 8 for processing sequences of data in a functional style. 
+Streams allow you to perform operations like filtering, mapping, and reducing on collections with concise and readable code.
+
+5.Explain the difference between the map and flatMap operations in the Stream API.
+Answer:
+The map operation transforms each element of a stream into another element using a given function. 
+It produces a one-to-one mapping.The flatMap operation transforms each element into a stream of elements 
+and then flattens these streams into a single stream. It can produce a one-to-many or many-to-many mapping.
+
+6.What is the purpose of the java.util.function package in Java 8?
+Answer: The java.util.function package provides functional interfaces that represent various types of functions,
+predicates, and operators. These interfaces can be used as method references or with Lambda Expressions, making 
+it easier to work with functional programming concepts.
+
+7.Explain the concept of method references in Java 8.
+Answer: Method references in Java 8 allow you to refer to methods or constructors using a shorter syntax.
+They are shorthand notations for Lambda Expressions. Method references make the code more concise and readable 
+when you want to call an existing method or constructor.
+
+8.What is the purpose of the java.time package in Java 8, and how does it improve date and time handling?
+Answer: The java.time package in Java 8 provides a modern date and time API that addresses the shortcomings of
+ the old java.util.Date and java.util.Calendar classes. It offers better support for date and time manipulation,
+ formatting, parsing, and time zones.
+
+9.Explain the default and static methods in interfaces introduced in Java 8.
+Anwer:
+default methods allow you to add new methods to existing interfaces without breaking the classes that implement 
+those interfaces. Classes can inherit a default method's implementation.static methods in interfaces provide 
+utility methods that can be called on the interface itself, not on instances of implementing classes.
+
+10.What are the benefits of using Java 8 features in code development?
+Answer: Java 8 features like Lambda Expressions, the Stream API, and functional interfaces help make code more concise,
+readable, and expressive. They promote a functional programming style, enable easier parallelism, and provide improved 
+date and time handling capabilities.
+
+11.What is the java.util.Optional class introduced in Java 8, and how is it used?
+Answer: java.util.Optional is a container class introduced in Java 8 to represent an optional value, which may or may not 
+be present. It is used to avoid null references and NullPointerExceptions by providing methods for handling absent or present 
+values safely.
+
+12.Explain the concept of parallel stream processing in Java 8.
+Answer: In Java 8, the Stream API allows for parallel stream processing, which means that operations on a stream can be
+executed in parallel by leveraging multiple CPU cores. This can lead to improved performance for certain types of operations 
+on large data sets.
+
+13.What is the purpose of the peek method in the Stream API?
+Answer: The peek method is used in the Stream API to perform an action on each element of the stream without affecting the
+stream's content. It is often used for debugging, logging, or side effects while processing elements in a stream.
+
+14.Explain the concept of method chaining with Java 8 streams.
+Answer: Method chaining is a technique where multiple Stream operations are combined into a single, fluent sequence.
+ This allows you to perform a series of transformations and filters on a stream in a concise and readable manner.
+
+15.What is the Collectors class in Java 8, and how is it used with streams?
+Answer: The Collectors class in Java 8 provides various built-in collectors for aggregating elements of a stream into
+collections like lists, sets, or maps. It is used in conjunction with the collect method to collect and process data from a stream.
+
+16.Explain the difference between the forEach method and the forEachOrdered method in the Stream API.
+Answer:
+The forEach method processes elements of a stream in an unordered manner, which may not maintain the original 
+order of the elements.The forEachOrdered method processes elements of a stream in the encounter order, preserving the 
+original order of elements as they appear in the stream.
+
+17.What is the purpose of the Supplier functional interface in Java 8, and where is it commonly used?
+Answer: The Supplier functional interface represents a supplier of results, which does not take any arguments but 
+produces a result. It is often used for lazy initialization, where the value is computed only when needed.
+
+18.Explain how Java 8 supports method references with instance methods and constructors.
+Answer: Java 8 allows method references to instance methods and constructors. An instance method reference 
+is expressed using the syntax ClassName::methodName, and it provides a reference to an instance method of a particular object.
+A constructor reference is expressed using the syntax ClassName::new, and it creates a new object using the constructor of a
+particular class.
+
+19.What is the java.util.function.Predicate interface in Java 8, and how is it used?
+Answer: The Predicate interface is a functional interface in Java 8 that represents a condition that can be evaluated as
+ true or false. It is often used for filtering elements in streams or for defining conditions for method parameters.
+
+20.What are the advantages of using Java 8 features like Lambda Expressions and Streams in code development?
+Answer: Java 8 features promote cleaner and more expressive code, reduce boilerplate code, enhance code readability, 
+enable functional programming paradigms, support parallel processing, and improve overall developer productivity.
